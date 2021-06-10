@@ -1,0 +1,12 @@
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+  font-family: "Staatliches", cursive;
+}
+
+
