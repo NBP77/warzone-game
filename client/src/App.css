@@ -2,3 +2,13 @@ html,
 body {
   height: 100%
 }
+
+:root {
+  --emerald: #046306;
+  --light-emerald: #1b842c;
+  --mint: #3aab58;
+  --light-mint: #4fc879;
+  --black: black;
+  --white: white;
+
+}
