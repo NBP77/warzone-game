@@ -10,6 +10,7 @@
   align-items: center;
   font-family: "Staatliches", cursive;
   letter-spacing: 2px;
+  color: var(--white);
 }
 
 .btn-container {
@@ -20,26 +21,19 @@
 }
 
 .start-button {
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
-  color: #FFFFFF;
-  padding: 50px 100px 50px  ;
+  color: var(--white);
+  padding: 50px 100px 50px;
   border-radius: 10px;
   margin: 20px;
   font-size: 40px;
   letter-spacing: 2px;
+  transition: all 1.5s;
+  border: 1px solid var(--white);
 }
 
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+.start-button:hover {
+  background: var(--emerald);
+  transition: all 0.5s;
 }
+
 

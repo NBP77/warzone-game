@@ -1,6 +1,15 @@
+import React from "react";
+import { useHistory } from "react-router-dom";
 import "./style.css";
+ 
+function HomePage() {
 
-function StartPage() {
+  let history = useHistory(); 
+  
+  function handleClick() {
+    history.push("/GameStart");
+  }
+
   return (
     <div className="vertical-center">
       <div className="container-fluid">
@@ -9,7 +18,7 @@ function StartPage() {
         </div>
         <div className="row">
           <div className="display-3 btn-container col">
-            <div type="button" className="start-button">Start</div>
+            <div type="button" className="start-button" onClick={handleClick}>Start</div>
           </div>
         </div>
       </div>
@@ -17,4 +26,4 @@ function StartPage() {
   );
 }
 
-export default StartPage;
+export default HomePage;
