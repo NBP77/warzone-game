@@ -1,6 +1,8 @@
 import "./style.css";
+import { GoPlay } from "react-icons/go";
 
-function GameStart() {
+
+function GameBox() {
   return (
     <div className="vertical-center">
       <div className="container-fluid game-card">
@@ -10,26 +12,26 @@ function GameStart() {
 
         <div className="row">
           <div className="col-4 play-btn">
-            <button>Play clip</button>
+            <button><GoPlay /></button>
           </div>
           <div className="col-8 mp3-animation">Put mp3 animation in</div>
         </div>
 
         <div className="row">
           <form className="col answer-section">
-            <div class="input-group">
+            <div className="input-group">
               <input
                 type="text"
                 className="form-control"
-                placeholder="Enter answer"
+                placeholder="Enter answer" 
                 name="answer"
               />
               <button
-                class="btn btn-outline-secondary"
+                className="btn btn-outline-secondary"
                 type="button"
                 id="button-addon2"
               >
-                Enter 
+                Enter
               </button>
             </div>
           </form>
@@ -39,4 +41,4 @@ function GameStart() {
   );
 }
 
-export default GameStart;
+export default GameBox;

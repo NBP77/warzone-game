@@ -7,7 +7,7 @@ function HomePage() {
   let history = useHistory(); 
   
   function handleClick() {
-    history.push("/GameStart");
+    history.push("/GameBox");
   }
 
   return (
