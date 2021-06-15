@@ -1,0 +1,15 @@
+/* .quiz {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+  } */
+
+.gun-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Staatliches", cursive;
+    letter-spacing: 2px;
+    color: var(--white);
+    font-size: 50px;
+}
