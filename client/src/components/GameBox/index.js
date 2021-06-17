@@ -5,7 +5,7 @@ import { GoPlay } from "react-icons/go";
 function GameBox() {
   return (
     <div className="vertical-center">
-      <div className="container-fluid game-card">
+      <div className="container-fluid">
         <div className="row">
           <h1 className="display-1 title col">Can you guess that gun?</h1>
         </div>
