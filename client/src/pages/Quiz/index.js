@@ -1,31 +1,87 @@
 import React, { useState } from "react";
-import { Howl, Howler } from "howler";
+import ReactAudioPlayer from "react-audio-player";
 import "./style.css";
-import Kilo from "../../audioclips/Kilo.mp3";
-import Fal from "../../audioclips/FAL.mp3";
+import KILO from "../../audioclips/Kilo.mp3";
+import FAL from "../../audioclips/FAL.mp3";
 import M4 from "../../audioclips/M4.mp3";
-import Fr556 from "../../audioclips/FR-5.56.mp3";
-import Oden from "../../audioclips/Oden.mp3";
+import FR556 from "../../audioclips/FR-5.56.mp3";
+import ODEN from "../../audioclips/Oden.mp3";
 import M13 from "../../audioclips/M13.mp3";
-import Scar from "../../audioclips/Scar.mp3";
+import SCAR from "../../audioclips/Scar.mp3";
 import AK47 from "../../audioclips/AK-47.mp3";
 import RAM from "../../audioclips/RAM.mp3";
-import Grau from "../../audioclips/GRAU.mp3";
-import Amax from "../../audioclips/AMAX.mp3";
+import GRAU from "../../audioclips/GRAU.mp3";
+import AMAX from "../../audioclips/AMAX.mp3";
 import AN94 from "../../audioclips/AN-94.mp3";
 import ASVAL from "../../audioclips/AS-VAL.mp3";
 
 function Quiz() {
+  // const audioClips = [
+  //   {
+  //     value: KILO,
+  //     id: 1,
+  //   },
+  //   {
+  //     value: FAL,
+  //     id: 2,
+  //   },
+  //   {
+  //     value: M4,
+  //     id: 3,
+  //   },
+  //   {
+  //     value: FR556,
+  //     id: 4,
+  //   },
+  //   {
+  //     value: ODEN,
+  //     id: 5,
+  //   },
+  //   {
+  //     value: M13,
+  //     id: 6,
+  //   },
+  //   {
+  //     value: SCAR,
+  //     id: 7,
+  //   },
+  //   {
+  //     value: AK47,
+  //     id: 8,
+  //   },
+  //   {
+  //     value: RAM,
+  //     id: 9,
+  //   },
+  //   {
+  //     value: GRAU,
+  //     id: 10,
+  //   },
+  //   {
+  //     value: AMAX,
+  //     id: 11,
+  //   },
+  //   {
+  //     value: AN94,
+  //     id: 12,
+  //   },
+  //   {
+  //     value: ASVAL,
+  //     id: 13,
+  //   },
+  // ];
 
   const questions = [
     {
-      questionText: "What gun is this?", 
+      id: 1,
+      questionText: "What gun is this?",
+      audio: KILO, 
       answerOptions: [
         { answerText: "Kilo", isCorrect: true },
         { answerText: "FAL", isCorrect: false },
         { answerText: "M4", isCorrect: false },
         { answerText: "FR 5.56", isCorrect: false },
-        { answerText: "Oden", isCorrect: false },   
+        { answerText: "Oden", isCorrect: false },
         { answerText: "M13", isCorrect: false },
         { answerText: "Scar", isCorrect: false },
         { answerText: "AK-47", isCorrect: false },
@@ -35,12 +91,13 @@ function Quiz() {
         { answerText: "An-94", isCorrect: false },
         { answerText: "AS VAL", isCorrect: false },
       ],
-     sound: Kilo, 
-     label: "Kilo",
+      label: "Kilo",
     },
 
     {
+      id: 2,
       questionText: "What gun is this?",
+      audio: FAL,
       answerOptions: [
         { answerText: "Kilo", isCorrect: false },
         { answerText: "FAL", isCorrect: true },
@@ -56,12 +113,13 @@ function Quiz() {
         { answerText: "An-94", isCorrect: false },
         { answerText: "AS VAL", isCorrect: false },
       ],
-      sound: Fal, 
-      label: "FAL" ,
+      label: "FAL",
     },
 
     {
+      id: 3,
       questionText: "What gun is this?",
+      audio: M4,
       answerOptions: [
         { answerText: "Kilo", isCorrect: false },
         { answerText: "FAL", isCorrect: false },
@@ -77,12 +135,13 @@ function Quiz() {
         { answerText: "An-94", isCorrect: false },
         { answerText: "AS VAL", isCorrect: false },
       ],
-      sound: M4,
-      label: "M4" 
+      label: "M4",
     },
 
     {
+      id: 4,
       questionText: "What gun is this?",
+      audio: FR556,
       answerOptions: [
         { answerText: "Kilo", isCorrect: false },
         { answerText: "FAL", isCorrect: false },
@@ -98,12 +157,13 @@ function Quiz() {
         { answerText: "An-94", isCorrect: false },
         { answerText: "AS VAL", isCorrect: false },
       ],
-      sound: Fr556,
       label: "FR 5.56",
     },
 
     {
+      id: 5,
       questionText: "What gun is this?",
+      audio: ODEN,
       answerOptions: [
         { answerText: "Kilo", isCorrect: false },
         { answerText: "FAL", isCorrect: false },
@@ -119,12 +179,13 @@ function Quiz() {
         { answerText: "An-94", isCorrect: false },
         { answerText: "AS VAL", isCorrect: false },
       ],
-      sound: Oden,
       label: "Oden",
     },
 
     {
+      id: 6,
       questionText: "What gun is this?",
+      audio: M13,
       answerOptions: [
         { answerText: "Kilo", isCorrect: false },
         { answerText: "FAL", isCorrect: false },
@@ -140,12 +201,13 @@ function Quiz() {
         { answerText: "An-94", isCorrect: false },
         { answerText: "AS VAL", isCorrect: false },
       ],
-      sound: M13,  
       label: "M13",
     },
 
     {
+      id: 7,
       questionText: "What gun is this?",
+      audio: SCAR,
       answerOptions: [
         { answerText: "Kilo", isCorrect: false },
         { answerText: "FAL", isCorrect: false },
@@ -161,12 +223,13 @@ function Quiz() {
         { answerText: "An-94", isCorrect: false },
         { answerText: "AS VAL", isCorrect: false },
       ],
-      sound: Scar,
       label: "Scar",
     },
 
     {
+      id: 8,
       questionText: "What gun is this?",
+      audio: AK47,
       answerOptions: [
         { answerText: "Kilo", isCorrect: false },
         { answerText: "FAL", isCorrect: false },
@@ -182,12 +245,13 @@ function Quiz() {
         { answerText: "An-94", isCorrect: false },
         { answerText: "AS VAL", isCorrect: false },
       ],
-      sound: AK47,
       label: "AK-47",
     },
 
     {
+      id: 9,
       questionText: "What gun is this?",
+      audio: RAM,
       answerOptions: [
         { answerText: "Kilo", isCorrect: false },
         { answerText: "FAL", isCorrect: false },
@@ -203,12 +267,13 @@ function Quiz() {
         { answerText: "An-94", isCorrect: false },
         { answerText: "AS VAL", isCorrect: false },
       ],
-      sound: RAM,
       label: "RAM",
     },
 
     {
+      id: 10,
       questionText: "What gun is this?",
+      audio: GRAU,
       answerOptions: [
         { answerText: "Kilo", isCorrect: false },
         { answerText: "FAL", isCorrect: false },
@@ -224,12 +289,13 @@ function Quiz() {
         { answerText: "An-94", isCorrect: false },
         { answerText: "AS VAL", isCorrect: false },
       ],
-      sound: Grau,
       label: "Grau",
     },
 
     {
+      id: 11,
       questionText: "What gun is this?",
+      audio: AMAX,
       answerOptions: [
         { answerText: "Kilo", isCorrect: false },
         { answerText: "FAL", isCorrect: false },
@@ -245,12 +311,13 @@ function Quiz() {
         { answerText: "An-94", isCorrect: false },
         { answerText: "AS VAL", isCorrect: false },
       ],
-      sound: Amax,
       label: "AMAX",
     },
 
     {
+      id: 12,
       questionText: "What gun is this?",
+      audio: AN94,
       answerOptions: [
         { answerText: "Kilo", isCorrect: false },
         { answerText: "FAL", isCorrect: false },
@@ -266,12 +333,13 @@ function Quiz() {
         { answerText: "AN-94", isCorrect: true },
         { answerText: "AS VAL", isCorrect: false },
       ],
-      sound: AN94,
       label: "AN-94",
     },
 
     {
-      questionText: "What gun is this?", 
+      id: 13,
+      questionText: "What gun is this?",
+      audio: ASVAL,
       answerOptions: [
         { answerText: "Kilo", isCorrect: false },
         { answerText: "FAL", isCorrect: false },
@@ -287,7 +355,6 @@ function Quiz() {
         { answerText: "An-94", isCorrect: false },
         { answerText: "AS VAL", isCorrect: true },
       ],
-      sound: ASVAL,
       label: "AS VAL",
     },
   ];
@@ -298,39 +365,16 @@ function Quiz() {
 
   const [score, setScore] = useState(0);
 
-  // const [correctClip, setCorrectClip] = useState(0)
+  const [currentClip, setCurrentClip] = useState(0);
 
   // Create a state that resets the game //
   // Create a state that displays your scores in another div //
 
-  // const correctClip = questions.sound === questions.true
-
-  // const displayCorrectClip = questions.match(questions.sound === questions.true)
-  
-
-  const SoundPlay = (src) => {
-    const sound = new Howl({
-      src,
-    });
-    sound.play();
-  };
-
-  const RenderButtonAndSound = () => {
-    return questions.map((soundObj, index) => {  
-      return (
-        <button key={index} onClick={() => SoundPlay(soundObj.sound)}>
-          {soundObj.label}
-        </button>
-      );
-    
-    });
-  };
 
   const handleAnswerOptionClick = (isCorrect) => {
     if (isCorrect) {
       setScore(score + 1);
     }
-
     const nextQuestion = currentQuestion + 1;
     if (nextQuestion < questions.length) {
       setCurrentQuestion(nextQuestion);
@@ -338,8 +382,6 @@ function Quiz() {
       setShowScore(true);
     }
   };
-
-  Howler.volume(1.0);
 
   return (
     <div className="quiz vertical-center">
@@ -364,7 +406,9 @@ function Quiz() {
               <div className="question-text col">
                 {questions[currentQuestion].questionText}
               </div>
-              <div className="mp3-player col">{RenderButtonAndSound()}</div>
+              <div className="mp3-player col">
+                {/* {displayCorrectClip()} */}
+                </div>
             </div>
             <div className="container">
               <div className="row">
