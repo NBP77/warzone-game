@@ -15,306 +15,294 @@ import AMAX from "../../audioclips/AMAX.mp3";
 import AN94 from "../../audioclips/AN-94.mp3";
 import ASVAL from "../../audioclips/AS-VAL.mp3";
 
+const questions = [
+  {
+    questionText: "What gun is this?",
+    audio: KILO,
+    answerOptions: [
+      { answerText: "Kilo", isCorrect: true },
+      { answerText: "FAL", isCorrect: false },
+      { answerText: "M4", isCorrect: false },
+      { answerText: "FR 5.56", isCorrect: false },
+      { answerText: "Oden", isCorrect: false },
+      { answerText: "M13", isCorrect: false },
+      { answerText: "Scar", isCorrect: false },
+      { answerText: "AK-47", isCorrect: false },
+      { answerText: "RAM", isCorrect: false },
+      { answerText: "Grau", isCorrect: false },
+      { answerText: "AMAX", isCorrect: false },
+      { answerText: "An-94", isCorrect: false },
+      { answerText: "AS VAL", isCorrect: false },
+    ],
+  },
+
+  {
+    questionText: "What gun is this?",
+    audio: FAL,
+    answerOptions: [
+      { answerText: "Kilo", isCorrect: false },
+      { answerText: "FAL", isCorrect: true },
+      { answerText: "M4", isCorrect: false },
+      { answerText: "FR 5.56", isCorrect: false },
+      { answerText: "Oden", isCorrect: false },
+      { answerText: "M13", isCorrect: false },
+      { answerText: "Scar", isCorrect: false },
+      { answerText: "AK-47", isCorrect: false },
+      { answerText: "RAM", isCorrect: false },
+      { answerText: "Grau", isCorrect: false },
+      { answerText: "AMAX", isCorrect: false },
+      { answerText: "An-94", isCorrect: false },
+      { answerText: "AS VAL", isCorrect: false },
+    ],
+  },
+
+  {
+    questionText: "What gun is this?",
+    audio: M4,
+    answerOptions: [
+      { answerText: "Kilo", isCorrect: false },
+      { answerText: "FAL", isCorrect: false },
+      { answerText: "M4", isCorrect: true },
+      { answerText: "FR 5.56", isCorrect: false },
+      { answerText: "Oden", isCorrect: false },
+      { answerText: "M13", isCorrect: false },
+      { answerText: "Scar", isCorrect: false },
+      { answerText: "AK-47", isCorrect: false },
+      { answerText: "RAM", isCorrect: false },
+      { answerText: "Grau", isCorrect: false },
+      { answerText: "AMAX", isCorrect: false },
+      { answerText: "An-94", isCorrect: false },
+      { answerText: "AS VAL", isCorrect: false },
+    ],
+  },
+
+  {
+    questionText: "What gun is this?",
+    audio: FR556,
+    answerOptions: [
+      { answerText: "Kilo", isCorrect: false },
+      { answerText: "FAL", isCorrect: false },
+      { answerText: "M4", isCorrect: false },
+      { answerText: "FR 5.56", isCorrect: true },
+      { answerText: "Oden", isCorrect: false },
+      { answerText: "M13", isCorrect: false },
+      { answerText: "Scar", isCorrect: false },
+      { answerText: "AK-47", isCorrect: false },
+      { answerText: "RAM", isCorrect: false },
+      { answerText: "Grau", isCorrect: false },
+      { answerText: "AMAX", isCorrect: false },
+      { answerText: "An-94", isCorrect: false },
+      { answerText: "AS VAL", isCorrect: false },
+    ],
+  },
+
+  {
+    questionText: "What gun is this?",
+    audio: ODEN,
+    answerOptions: [
+      { answerText: "Kilo", isCorrect: false },
+      { answerText: "FAL", isCorrect: false },
+      { answerText: "M4", isCorrect: false },
+      { answerText: "FR 5.56", isCorrect: false },
+      { answerText: "Oden", isCorrect: true },
+      { answerText: "M13", isCorrect: false },
+      { answerText: "Scar", isCorrect: false },
+      { answerText: "AK-47", isCorrect: false },
+      { answerText: "RAM", isCorrect: false },
+      { answerText: "Grau", isCorrect: false },
+      { answerText: "AMAX", isCorrect: false },
+      { answerText: "An-94", isCorrect: false },
+      { answerText: "AS VAL", isCorrect: false },
+    ],
+  },
+
+  {
+    questionText: "What gun is this?",
+    audio: M13,
+    answerOptions: [
+      { answerText: "Kilo", isCorrect: false },
+      { answerText: "FAL", isCorrect: false },
+      { answerText: "M4", isCorrect: false },
+      { answerText: "FR 5.56", isCorrect: false },
+      { answerText: "Oden", isCorrect: false },
+      { answerText: "M13", isCorrect: true },
+      { answerText: "Scar", isCorrect: false },
+      { answerText: "AK-47", isCorrect: false },
+      { answerText: "RAM", isCorrect: false },
+      { answerText: "Grau", isCorrect: false },
+      { answerText: "AMAX", isCorrect: false },
+      { answerText: "An-94", isCorrect: false },
+      { answerText: "AS VAL", isCorrect: false },
+    ],
+  },
+
+  {
+    questionText: "What gun is this?",
+    audio: SCAR,
+    answerOptions: [
+      { answerText: "Kilo", isCorrect: false },
+      { answerText: "FAL", isCorrect: false },
+      { answerText: "M4", isCorrect: false },
+      { answerText: "FR 5.56", isCorrect: false },
+      { answerText: "Oden", isCorrect: false },
+      { answerText: "M13", isCorrect: false },
+      { answerText: "Scar", isCorrect: true },
+      { answerText: "AK-47", isCorrect: false },
+      { answerText: "RAM", isCorrect: false },
+      { answerText: "Grau", isCorrect: false },
+      { answerText: "AMAX", isCorrect: false },
+      { answerText: "An-94", isCorrect: false },
+      { answerText: "AS VAL", isCorrect: false },
+    ],
+  },
+
+  {
+    questionText: "What gun is this?",
+    audio: AK47,
+    answerOptions: [
+      { answerText: "Kilo", isCorrect: false },
+      { answerText: "FAL", isCorrect: false },
+      { answerText: "M4", isCorrect: false },
+      { answerText: "FR 5.56", isCorrect: false },
+      { answerText: "Oden", isCorrect: false },
+      { answerText: "M13", isCorrect: false },
+      { answerText: "Scar", isCorrect: false },
+      { answerText: "AK-47", isCorrect: true },
+      { answerText: "RAM", isCorrect: false },
+      { answerText: "Grau", isCorrect: false },
+      { answerText: "AMAX", isCorrect: false },
+      { answerText: "An-94", isCorrect: false },
+      { answerText: "AS VAL", isCorrect: false },
+    ],
+  },
+
+  {
+    questionText: "What gun is this?",
+    audio: RAM,
+    answerOptions: [
+      { answerText: "Kilo", isCorrect: false },
+      { answerText: "FAL", isCorrect: false },
+      { answerText: "M4", isCorrect: false },
+      { answerText: "FR 5.56", isCorrect: false },
+      { answerText: "Oden", isCorrect: false },
+      { answerText: "M13", isCorrect: false },
+      { answerText: "Scar", isCorrect: false },
+      { answerText: "AK-47", isCorrect: false },
+      { answerText: "RAM", isCorrect: true },
+      { answerText: "Grau", isCorrect: false },
+      { answerText: "AMAX", isCorrect: false },
+      { answerText: "An-94", isCorrect: false },
+      { answerText: "AS VAL", isCorrect: false },
+    ],
+  },
+
+  {
+    questionText: "What gun is this?",
+    audio: GRAU,
+    answerOptions: [
+      { answerText: "Kilo", isCorrect: false },
+      { answerText: "FAL", isCorrect: false },
+      { answerText: "M4", isCorrect: false },
+      { answerText: "FR 5.56", isCorrect: false },
+      { answerText: "Oden", isCorrect: false },
+      { answerText: "M13", isCorrect: false },
+      { answerText: "Scar", isCorrect: false },
+      { answerText: "AK-47", isCorrect: false },
+      { answerText: "RAM", isCorrect: false },
+      { answerText: "Grau", isCorrect: true },
+      { answerText: "AMAX", isCorrect: false },
+      { answerText: "An-94", isCorrect: false },
+      { answerText: "AS VAL", isCorrect: false },
+    ],
+  },
+
+  {
+    questionText: "What gun is this?",
+    audio: AMAX,
+    answerOptions: [
+      { answerText: "Kilo", isCorrect: false },
+      { answerText: "FAL", isCorrect: false },
+      { answerText: "M4", isCorrect: false },
+      { answerText: "FR 5.56", isCorrect: false },
+      { answerText: "Oden", isCorrect: false },
+      { answerText: "M13", isCorrect: false },
+      { answerText: "Scar", isCorrect: false },
+      { answerText: "AK-47", isCorrect: false },
+      { answerText: "RAM", isCorrect: false },
+      { answerText: "Grau", isCorrect: false },
+      { answerText: "AMAX", isCorrect: true },
+      { answerText: "An-94", isCorrect: false },
+      { answerText: "AS VAL", isCorrect: false },
+    ],
+  },
+
+  {
+    questionText: "What gun is this?",
+    audio: AN94,
+    answerOptions: [
+      { answerText: "Kilo", isCorrect: false },
+      { answerText: "FAL", isCorrect: false },
+      { answerText: "M4", isCorrect: false },
+      { answerText: "FR 5.56", isCorrect: false },
+      { answerText: "Oden", isCorrect: false },
+      { answerText: "M13", isCorrect: false },
+      { answerText: "Scar", isCorrect: false },
+      { answerText: "AK-47", isCorrect: false },
+      { answerText: "RAM", isCorrect: false },
+      { answerText: "Grau", isCorrect: false },
+      { answerText: "AMAX", isCorrect: false },
+      { answerText: "AN-94", isCorrect: true },
+      { answerText: "AS VAL", isCorrect: false },
+    ],
+    label: "AN-94",
+  },
+
+  {
+    questionText: "What gun is this?",
+    audio: ASVAL,
+    answerOptions: [
+      { answerText: "Kilo", isCorrect: false },
+      { answerText: "FAL", isCorrect: false },
+      { answerText: "M4", isCorrect: false },
+      { answerText: "FR 5.56", isCorrect: false },
+      { answerText: "Oden", isCorrect: false },
+      { answerText: "M13", isCorrect: false },
+      { answerText: "Scar", isCorrect: false },
+      { answerText: "AK-47", isCorrect: false },
+      { answerText: "RAM", isCorrect: false },
+      { answerText: "Grau", isCorrect: false },
+      { answerText: "AMAX", isCorrect: false },
+      { answerText: "An-94", isCorrect: false },
+      { answerText: "AS VAL", isCorrect: true },
+    ],
+    label: "AS VAL",
+  },
+];
+
+function shuffle(array) {
+  var currentIndex = array.length,
+    randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex],
+      array[currentIndex],
+    ];
+  }
+
+  return array;
+}
+
+shuffle(questions);
+console.log(questions);
 
 function Quiz() {
-  const questions = [
-    {
-      id: 1,
-      questionText: "What gun is this? KILo",
-      audio: KILO,
-      answerOptions: [
-        { answerText: "Kilo", isCorrect: true },
-        { answerText: "FAL", isCorrect: false },
-        { answerText: "M4", isCorrect: false },
-        { answerText: "FR 5.56", isCorrect: false },
-        { answerText: "Oden", isCorrect: false },
-        { answerText: "M13", isCorrect: false },
-        { answerText: "Scar", isCorrect: false },
-        { answerText: "AK-47", isCorrect: false },
-        { answerText: "RAM", isCorrect: false },
-        { answerText: "Grau", isCorrect: false },
-        { answerText: "AMAX", isCorrect: false },
-        { answerText: "An-94", isCorrect: false },
-        { answerText: "AS VAL", isCorrect: false },
-      ],
-      label: "Kilo",
-    },
-
-    {
-      id: 2,
-      questionText: "What gun is this? FAL",
-      audio: FAL,
-      answerOptions: [
-        { answerText: "Kilo", isCorrect: false },
-        { answerText: "FAL", isCorrect: true },
-        { answerText: "M4", isCorrect: false },
-        { answerText: "FR 5.56", isCorrect: false },
-        { answerText: "Oden", isCorrect: false },
-        { answerText: "M13", isCorrect: false },
-        { answerText: "Scar", isCorrect: false },
-        { answerText: "AK-47", isCorrect: false },
-        { answerText: "RAM", isCorrect: false },
-        { answerText: "Grau", isCorrect: false },
-        { answerText: "AMAX", isCorrect: false },
-        { answerText: "An-94", isCorrect: false },
-        { answerText: "AS VAL", isCorrect: false },
-      ],
-      label: "FAL",
-    },
-
-    {
-      id: 3,
-      questionText: "What gun is this? M4",
-      audio: M4,
-      answerOptions: [
-        { answerText: "Kilo", isCorrect: false },
-        { answerText: "FAL", isCorrect: false },
-        { answerText: "M4", isCorrect: true },
-        { answerText: "FR 5.56", isCorrect: false },
-        { answerText: "Oden", isCorrect: false },
-        { answerText: "M13", isCorrect: false },
-        { answerText: "Scar", isCorrect: false },
-        { answerText: "AK-47", isCorrect: false },
-        { answerText: "RAM", isCorrect: false },
-        { answerText: "Grau", isCorrect: false },
-        { answerText: "AMAX", isCorrect: false },
-        { answerText: "An-94", isCorrect: false },
-        { answerText: "AS VAL", isCorrect: false },
-      ],
-      label: "M4",
-    },
-
-    {
-      id: 4,
-      questionText: "What gun is this? FR556",
-      audio: FR556,
-      answerOptions: [
-        { answerText: "Kilo", isCorrect: false },
-        { answerText: "FAL", isCorrect: false },
-        { answerText: "M4", isCorrect: false },
-        { answerText: "FR 5.56", isCorrect: true },
-        { answerText: "Oden", isCorrect: false },
-        { answerText: "M13", isCorrect: false },
-        { answerText: "Scar", isCorrect: false },
-        { answerText: "AK-47", isCorrect: false },
-        { answerText: "RAM", isCorrect: false },
-        { answerText: "Grau", isCorrect: false },
-        { answerText: "AMAX", isCorrect: false },
-        { answerText: "An-94", isCorrect: false },
-        { answerText: "AS VAL", isCorrect: false },
-      ],
-      label: "FR 5.56",
-    },
-
-    {
-      id: 5,
-      questionText: "What gun is this? ODEN",
-      audio: ODEN,
-      answerOptions: [
-        { answerText: "Kilo", isCorrect: false },
-        { answerText: "FAL", isCorrect: false },
-        { answerText: "M4", isCorrect: false },
-        { answerText: "FR 5.56", isCorrect: false },
-        { answerText: "Oden", isCorrect: true },
-        { answerText: "M13", isCorrect: false },
-        { answerText: "Scar", isCorrect: false },
-        { answerText: "AK-47", isCorrect: false },
-        { answerText: "RAM", isCorrect: false },
-        { answerText: "Grau", isCorrect: false },
-        { answerText: "AMAX", isCorrect: false },
-        { answerText: "An-94", isCorrect: false },
-        { answerText: "AS VAL", isCorrect: false },
-      ],
-      label: "Oden",
-    },
-
-    {
-      id: 6,
-      questionText: "What gun is this? M13",
-      audio: M13,
-      answerOptions: [
-        { answerText: "Kilo", isCorrect: false },
-        { answerText: "FAL", isCorrect: false },
-        { answerText: "M4", isCorrect: false },
-        { answerText: "FR 5.56", isCorrect: false },
-        { answerText: "Oden", isCorrect: false },
-        { answerText: "M13", isCorrect: true },
-        { answerText: "Scar", isCorrect: false },
-        { answerText: "AK-47", isCorrect: false },
-        { answerText: "RAM", isCorrect: false },
-        { answerText: "Grau", isCorrect: false },
-        { answerText: "AMAX", isCorrect: false },
-        { answerText: "An-94", isCorrect: false },
-        { answerText: "AS VAL", isCorrect: false },
-      ],
-      label: "M13",
-    },
-
-    {
-      id: 7,
-      questionText: "What gun is this? SCAR",
-      audio: SCAR,
-      answerOptions: [
-        { answerText: "Kilo", isCorrect: false },
-        { answerText: "FAL", isCorrect: false },
-        { answerText: "M4", isCorrect: false },
-        { answerText: "FR 5.56", isCorrect: false },
-        { answerText: "Oden", isCorrect: false },
-        { answerText: "M13", isCorrect: false },
-        { answerText: "Scar", isCorrect: true },
-        { answerText: "AK-47", isCorrect: false },
-        { answerText: "RAM", isCorrect: false },
-        { answerText: "Grau", isCorrect: false },
-        { answerText: "AMAX", isCorrect: false },
-        { answerText: "An-94", isCorrect: false },
-        { answerText: "AS VAL", isCorrect: false },
-      ],
-      label: "Scar",
-    },
-
-    {
-      id: 8,
-      questionText: "What gun is this? AK47",
-      audio: AK47,
-      answerOptions: [
-        { answerText: "Kilo", isCorrect: false },
-        { answerText: "FAL", isCorrect: false },
-        { answerText: "M4", isCorrect: false },
-        { answerText: "FR 5.56", isCorrect: false },
-        { answerText: "Oden", isCorrect: false },
-        { answerText: "M13", isCorrect: false },
-        { answerText: "Scar", isCorrect: false },
-        { answerText: "AK-47", isCorrect: true },
-        { answerText: "RAM", isCorrect: false },
-        { answerText: "Grau", isCorrect: false },
-        { answerText: "AMAX", isCorrect: false },
-        { answerText: "An-94", isCorrect: false },
-        { answerText: "AS VAL", isCorrect: false },
-      ],
-      label: "AK-47",
-    },
-
-    {
-      id: 9,
-      questionText: "What gun is this? Ram",
-      audio: RAM,
-      answerOptions: [
-        { answerText: "Kilo", isCorrect: false },
-        { answerText: "FAL", isCorrect: false },
-        { answerText: "M4", isCorrect: false },
-        { answerText: "FR 5.56", isCorrect: false },
-        { answerText: "Oden", isCorrect: false },
-        { answerText: "M13", isCorrect: false },
-        { answerText: "Scar", isCorrect: false },
-        { answerText: "AK-47", isCorrect: false },
-        { answerText: "RAM", isCorrect: true },
-        { answerText: "Grau", isCorrect: false },
-        { answerText: "AMAX", isCorrect: false },
-        { answerText: "An-94", isCorrect: false },
-        { answerText: "AS VAL", isCorrect: false },
-      ],
-      label: "RAM",
-    },
-
-    {
-      id: 10,
-      questionText: "What gun is this? grau",
-      audio: GRAU,
-      answerOptions: [
-        { answerText: "Kilo", isCorrect: false },
-        { answerText: "FAL", isCorrect: false },
-        { answerText: "M4", isCorrect: false },
-        { answerText: "FR 5.56", isCorrect: false },
-        { answerText: "Oden", isCorrect: false },
-        { answerText: "M13", isCorrect: false },
-        { answerText: "Scar", isCorrect: false },
-        { answerText: "AK-47", isCorrect: false },
-        { answerText: "RAM", isCorrect: false },
-        { answerText: "Grau", isCorrect: true },
-        { answerText: "AMAX", isCorrect: false },
-        { answerText: "An-94", isCorrect: false },
-        { answerText: "AS VAL", isCorrect: false },
-      ],
-      label: "Grau",
-    },
-
-    {
-      id: 11,
-      questionText: "What gun is this? amax",
-      audio: AMAX,
-      answerOptions: [
-        { answerText: "Kilo", isCorrect: false },
-        { answerText: "FAL", isCorrect: false },
-        { answerText: "M4", isCorrect: false },
-        { answerText: "FR 5.56", isCorrect: false },
-        { answerText: "Oden", isCorrect: false },
-        { answerText: "M13", isCorrect: false },
-        { answerText: "Scar", isCorrect: false },
-        { answerText: "AK-47", isCorrect: false },
-        { answerText: "RAM", isCorrect: false },
-        { answerText: "Grau", isCorrect: false },
-        { answerText: "AMAX", isCorrect: true },
-        { answerText: "An-94", isCorrect: false },
-        { answerText: "AS VAL", isCorrect: false },
-      ],
-      label: "AMAX",
-    },
-
-    {
-      id: 12,
-      questionText: "What gun is this? an94",
-      audio: AN94,
-      answerOptions: [
-        { answerText: "Kilo", isCorrect: false },
-        { answerText: "FAL", isCorrect: false },
-        { answerText: "M4", isCorrect: false },
-        { answerText: "FR 5.56", isCorrect: false },
-        { answerText: "Oden", isCorrect: false },
-        { answerText: "M13", isCorrect: false },
-        { answerText: "Scar", isCorrect: false },
-        { answerText: "AK-47", isCorrect: false },
-        { answerText: "RAM", isCorrect: false },
-        { answerText: "Grau", isCorrect: false },
-        { answerText: "AMAX", isCorrect: false },
-        { answerText: "AN-94", isCorrect: true },
-        { answerText: "AS VAL", isCorrect: false },
-      ],
-      label: "AN-94",
-    },
-
-    {
-      id: 13,
-      questionText: "What gun is this? asval",
-      audio: ASVAL,
-      answerOptions: [
-        { answerText: "Kilo", isCorrect: false },
-        { answerText: "FAL", isCorrect: false },
-        { answerText: "M4", isCorrect: false },
-        { answerText: "FR 5.56", isCorrect: false },
-        { answerText: "Oden", isCorrect: false },
-        { answerText: "M13", isCorrect: false },
-        { answerText: "Scar", isCorrect: false },
-        { answerText: "AK-47", isCorrect: false },
-        { answerText: "RAM", isCorrect: false },
-        { answerText: "Grau", isCorrect: false },
-        { answerText: "AMAX", isCorrect: false },
-        { answerText: "An-94", isCorrect: false },
-        { answerText: "AS VAL", isCorrect: true },
-      ],
-      label: "AS VAL",
-    },
-  ];
-
- 
-//  const randomizedQuestions = questions.sort(() => Math.random() - 0.5);
-
-//  console.log(randomizedQuestions);
-
-var randomObject = questions[Math.floor(Math.random() * questions.length)];
-
-
-console.log(randomObject);
-
   const [currentQuestion, setCurrentQuestion] = useState(0);
 
   const [showScore, setShowScore] = useState(false);
@@ -330,6 +318,8 @@ console.log(randomObject);
     if (isCorrect) {
       setScore(score + 1);
     }
+    if (isCorrect) {
+    }
     const nextQuestion = currentQuestion + 1;
     if (nextQuestion < questions.length) {
       setCurrentQuestion(nextQuestion);
@@ -337,10 +327,6 @@ console.log(randomObject);
       setShowScore(true);
     }
   };
-
-  // const displayRandomQuestion = () => {
-
-  // };
 
   const displayCorrectClip = () => {
     const correctClip = questions[currentQuestion].audio;
@@ -356,22 +342,27 @@ console.log(randomObject);
   };
 
   return (
-    <div className="quiz vertical-center">
+    <div className="quiz">
       <div className="container-fluid">
         {showScore ? (
-          <div className="score-section">
-            You scored {score} out of {questions.length}
+          <div className="score-section container-fluid vertical-center">
+            <div class="card score-card">
+              <div class="card-body">
+                <p class="card-text">
+                You scored {score} out of {questions.length}
+                </p>
+                {/* <a href="#" class="btn btn-primary">
+                  Play again?
+                </a> */}
+              </div>
+            </div>
           </div>
+          
         ) : (
           <div className="question-section">
-            <div className="row">
-              <h1 className="game-title col">
-                Can you guess that Modern Warfare AR by sound?
-              </h1>
-            </div>
             <div>
-              <div className="question-count row">
-                <h3 className="gun-number col">Gun {currentQuestion + 1}</h3>
+              <div>
+                <div className="gun-number">Gun {currentQuestion + 1}</div>
               </div>
             </div>
             <div className="row">
