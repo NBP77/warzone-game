@@ -12,13 +12,13 @@ function HomePage() {
 
   return (
     <div className="vertical-center">
-      <div className="container-fluid">
+      <div className="container-fluid start-page">
         <div className="row">
           <h1 className="title col">Can you guess this Modern Warfare gun by sound?</h1>
         </div>
         <div className="row">
           <div className="display-3 btn-container col">
-            <div type="button" className="start-button" onClick={handleClick}>Start</div>
+            <div type="button" className="start-button" onClick={handleClick}>Play</div>
           </div>
         </div>
       </div>

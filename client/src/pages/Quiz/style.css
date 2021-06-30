@@ -1,3 +1,8 @@
+.game-container {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
 
 .gun-number {
   display: flex;
@@ -39,7 +44,35 @@
 }
 
 .score-card {
-  background-color: blue;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Staatliches", cursive;
+  letter-spacing: 2px;
+  font-size: 30px;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: 4px solid blue;
+}
+
+.play-button {
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 10px;
+  margin: 20px;
+  font-size: 25px;
+  letter-spacing: 2px;
+  transition: all 1.5s;
+  border: 1px solid var(--white);
+}
+
+.play-button:hover {
+  background: blue;
+  transition: all 0.5s;
 }
 
 .answer-section {
@@ -51,29 +84,16 @@
 }
 
 .answer-btn {
-  /* box-sizing: border-box;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none; */
+
   background-color: transparent;
   border: 4px solid blue;
   border-radius: 5px;
   color: var(--white);
   cursor: pointer;
-  /* display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox; */
-  /* display: flex;
-  -webkit-align-self: center;
-      -ms-flex-item-align: center;
-          align-self: center; */
   font-size: 18px;
-  /* font-weight: 400; */
   line-height: 1;
   margin: 15px;
   padding: 20px 45px;
-  /* text-decoration: none; */
-  /* text-align: center; */
   text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
@@ -83,7 +103,7 @@
 .answer-btn:hover,
 .answer-btn:focus {
   color: var(--white);
-  /* outline: 0; */
+
 }
 
 .answer-btn {
@@ -94,4 +114,12 @@
   box-shadow: 0 0 40px 40px blue inset;
 }
 
+/* .answer-correct {
+  background-color: green;
+}
+
+.answer-wrong {
+  background-color: red;
+}
+ */
 

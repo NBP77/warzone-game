@@ -254,7 +254,6 @@ const questions = [
       { answerText: "AN-94", isCorrect: true },
       { answerText: "AS VAL", isCorrect: false },
     ],
-    label: "AN-94",
   },
 
   {
@@ -275,7 +274,6 @@ const questions = [
       { answerText: "An-94", isCorrect: false },
       { answerText: "AS VAL", isCorrect: true },
     ],
-    label: "AS VAL",
   },
 ];
 
@@ -283,13 +281,10 @@ function shuffle(array) {
   var currentIndex = array.length,
     randomIndex;
 
-  // While there remain elements to shuffle...
   while (0 !== currentIndex) {
-    // Pick a remaining element...
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
 
-    // And swap it with the current element.
     [array[currentIndex], array[randomIndex]] = [
       array[randomIndex],
       array[currentIndex],
@@ -298,7 +293,6 @@ function shuffle(array) {
 
   return array;
 }
-
 shuffle(questions);
 console.log(questions);
 
@@ -311,8 +305,107 @@ function Quiz() {
 
   const [currentClip, setCurrentClip] = useState(0);
 
-  // Create a state that resets the game //
-  // Create a state that displays your scores in another div //
+  const scoreResponseOne = "Umm have you even played the game??";
+  const scoreResponseTwo = "Wow major BOT Alert!!!";
+  const scoreResponseThree = "Chill you're dripping in sweat...";
+  const scoreResponseFour = "This kid is CRACKED!!!";
+  const scoreResponseFive = "Dude turn your Aimbot offff!!!!";
+
+  const displayResponseOne = () => {
+    if (score === 0) {
+      return (
+        <div className="card score-card">
+          <div className="card-body">
+            <p className="card-text">
+              You scored {score} out of {questions.length}
+            </p>
+            <div>{scoreResponseOne}</div>
+            <div type="button" className="play-button">
+              Play again?
+            </div>
+          </div>
+        </div>
+      );
+    }
+  };
+
+  const displayResponseTwo = () => {
+    if (
+      score === 1 ||
+      score === 2 ||
+      score === 3 ||
+      score === 4 ||
+      score === 5
+    ) {
+      return (
+        <div className="card score-card">
+          <div className="card-body">
+            <p className="card-text">
+              You scored {score} out of {questions.length}
+            </p>
+            <div>{scoreResponseTwo}</div>
+            <div type="button" className="play-button">
+              Play again?
+            </div>
+          </div>
+        </div>
+      );
+    }
+  };
+
+  const displayResponseThree = () => {
+    if (score === 6 || score === 7 || score === 8 || score === 9) {
+      return (
+        <div className="card score-card">
+          <div className="card-body">
+            <p className="card-text">
+              You scored {score} out of {questions.length}
+            </p>
+            <div>{scoreResponseThree}</div>
+            <div type="button" className="play-button">
+              Play again?
+            </div>
+          </div>
+        </div>
+      );
+    }
+  };
+
+  const displayResponseFour = () => {
+    if (score === 10 || score === 11 || score === 12) {
+      return (
+        <div className="card score-card">
+          <div className="card-body">
+            <p className="card-text">
+              You scored {score} out of {questions.length}
+            </p>
+            <div>{scoreResponseFour}</div>
+            <div type="button" className="play-button">
+              Play again?
+            </div>
+          </div>
+        </div>
+      );
+    }
+  };
+
+  const displayResponseFive = () => {
+    if (score === 13) {
+      return (
+        <div className="card score-card">
+          <div className="card-body">
+            <p className="card-text">
+              You scored {score} out of {questions.length}
+            </p>
+            <div>{scoreResponseFive}</div>
+            <div type="button" className="play-button">
+              Play again?
+            </div>
+          </div>
+        </div>
+      );
+    }
+  };
 
   const handleAnswerOptionClick = (isCorrect) => {
     if (isCorrect) {
@@ -346,20 +439,14 @@ function Quiz() {
       <div className="container-fluid">
         {showScore ? (
           <div className="score-section container-fluid vertical-center">
-            <div class="card score-card">
-              <div class="card-body">
-                <p class="card-text">
-                You scored {score} out of {questions.length}
-                </p>
-                {/* <a href="#" class="btn btn-primary">
-                  Play again?
-                </a> */}
-              </div>
-            </div>
+            {displayResponseOne()}
+            {displayResponseTwo()}
+            {displayResponseThree()}
+            {displayResponseFour()}
+            {displayResponseFive()}
           </div>
-          
         ) : (
-          <div className="question-section">
+          <div className="question-section game-container">
             <div>
               <div>
                 <div className="gun-number">Gun {currentQuestion + 1}</div>
@@ -377,10 +464,11 @@ function Quiz() {
                   {questions[currentQuestion].answerOptions.map(
                     (answerOptions) => (
                       <button
+                        id="button-color-change"
                         className="answer-btn"
-                        onClick={() =>
-                          handleAnswerOptionClick(answerOptions.isCorrect)
-                        }
+                        onClick={() => {
+                          handleAnswerOptionClick(answerOptions.isCorrect);
+                        }}
                       >
                         {answerOptions.answerText}
                       </button>
