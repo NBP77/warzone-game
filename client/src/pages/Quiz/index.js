@@ -293,6 +293,7 @@ function shuffle(array) {
 
   return array;
 }
+
 shuffle(questions);
 console.log(questions);
 
@@ -305,11 +306,39 @@ function Quiz() {
 
   const [currentClip, setCurrentClip] = useState(0);
 
+  const [lastScore, setLastScore] = useState(0); 
+
+
+  // Fix start page to look better
+
+  // Make the MP3 player look cooler and bigger and not show legnth of clip
+
+  // Re-Work the button layout to look good
+
+  // Color change on button if correct/wrong choice is picked
+
+  // Maybe use a different font
+
+  // Add sound clicks to buttons if user chooses right or wrong
+
+  // former score and high score
+
+
+
   const scoreResponseOne = "Umm have you even played the game??";
   const scoreResponseTwo = "Wow major BOT Alert!!!";
   const scoreResponseThree = "Chill you're dripping in sweat...";
   const scoreResponseFour = "This kid is CRACKED!!!";
   const scoreResponseFive = "Dude turn your Aimbot offff!!!!";
+  
+
+  const replayGame = () => {
+    window.location.reload();
+    setCurrentQuestion(0)
+    setScore(0)
+    setShowScore(false)
+    setCurrentClip(0)
+  }
 
   const displayResponseOne = () => {
     if (score === 0) {
@@ -320,8 +349,10 @@ function Quiz() {
               You scored {score} out of {questions.length}
             </p>
             <div>{scoreResponseOne}</div>
-            <div type="button" className="play-button">
-              Play again?
+            <div 
+            onClick={replayGame()} 
+             type="button" className="play-button">
+              Try Again?
             </div>
           </div>
         </div>
@@ -344,8 +375,10 @@ function Quiz() {
               You scored {score} out of {questions.length}
             </p>
             <div>{scoreResponseTwo}</div>
-            <div type="button" className="play-button">
-              Play again?
+            <div 
+            onClick={replayGame} 
+            type="button" className="play-button">
+              Try Again?
             </div>
           </div>
         </div>
@@ -362,8 +395,10 @@ function Quiz() {
               You scored {score} out of {questions.length}
             </p>
             <div>{scoreResponseThree}</div>
-            <div type="button" className="play-button">
-              Play again?
+            <div 
+            onClick={replayGame}
+             type="button" className="play-button">
+              Try Again?
             </div>
           </div>
         </div>
@@ -380,8 +415,10 @@ function Quiz() {
               You scored {score} out of {questions.length}
             </p>
             <div>{scoreResponseFour}</div>
-            <div type="button" className="play-button">
-              Play again?
+            <div 
+            onClick={replayGame} 
+            type="button" className="play-button">
+              Try Again?
             </div>
           </div>
         </div>
@@ -398,14 +435,20 @@ function Quiz() {
               You scored {score} out of {questions.length}
             </p>
             <div>{scoreResponseFive}</div>
-            <div type="button" className="play-button">
-              Play again?
+            <div 
+            onClick={replayGame} 
+            type="button" className="play-button">
+              Try Again?
             </div>
           </div>
         </div>
       );
     }
   };
+
+  const showLastScore = () => {
+    
+  }
 
   const handleAnswerOptionClick = (isCorrect) => {
     if (isCorrect) {
@@ -438,7 +481,9 @@ function Quiz() {
     <div className="quiz">
       <div className="container-fluid">
         {showScore ? (
-          <div className="score-section container-fluid vertical-center">
+          <div 
+
+          className="score-section container-fluid vertical-center">
             {displayResponseOne()}
             {displayResponseTwo()}
             {displayResponseThree()}
@@ -449,7 +494,9 @@ function Quiz() {
           <div className="question-section game-container">
             <div>
               <div>
-                <div className="gun-number">Gun {currentQuestion + 1}</div>
+                <div className="gun-number">
+                  Assault Rifle number {currentQuestion + 1}
+                </div>
               </div>
             </div>
             <div className="row">
