@@ -1,14 +1,14 @@
 .game-container {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  
 }
-
 
 .gun-number {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Staatliches", cursive;
+  font-family: 'Lato', sans-serif;
   letter-spacing: 2px;
   color: var(--white);
   font-size: 70px;
@@ -17,7 +17,7 @@
 
 .question-text {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   font-family: "Staatliches", cursive;
   letter-spacing: 2px;
@@ -28,7 +28,7 @@
 
 .mp3-player {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   font-family: "Staatliches", cursive;
   letter-spacing: 2px;
@@ -41,33 +41,49 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Lato', sans-serif;
 }
 
-.score-card {
+.score-card  {
   background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Staatliches", cursive;
-  letter-spacing: 2px;
-  font-size: 30px;
+  letter-spacing: 3px;
+  font-size: 40px;
   color: white;
   padding: 10px;
   border-radius: 5px;
   border: 4px solid blue;
 }
 
+.card-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+}
+
+.score-responses {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
 .play-button {
   color: var(--white);
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 5px;
   border-radius: 10px;
-  margin: 20px;
-  font-size: 25px;
-  letter-spacing: 2px;
+  margin: 40px;
+  font-size: 30px;
+  letter-spacing: 4px;
   transition: all 1.5s;
-  border: 1px solid var(--white);
+  border: 3px solid var(--white);
 }
 
 .play-button:hover {
@@ -80,11 +96,10 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  /* padding: 10px; */
+  padding: 10px;
 }
 
 .answer-btn {
-
   background-color: transparent;
   border: 4px solid blue;
   border-radius: 5px;
