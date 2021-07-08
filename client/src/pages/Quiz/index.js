@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import DisplayLastScore from "../../components/DisplayLastScore";
+// import ButtonDisplayOne from "../../components/ButtonDisplayOne";
 import ReactAudioPlayer from "react-audio-player";
 import "./style.css";
 import questions from "../../questions";
+import KiloPic from "../../ARPics/KILO.png"
+import FalPic from "../../ARPics/FAL.png"
+import M4Pic from "../../ARPics/M4.png"
+import Fr556Pic from "../../ARPics/FR 5.56.png"
 
 function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -17,13 +22,9 @@ function Quiz() {
 
   // const [wrongAnswerColor, setWrongAnswerColor] = useState();
 
-  // Fix start page to look better
-
-  // Re-Work the button layout to look good
+  // Re-Work the button layout to look good try to break them out in diff components
 
   // Color change on button if correct/wrong choice is picked
-
-  // Maybe use a different font
 
   // Add sound clicks to buttons if user chooses right or wrong
 
@@ -196,23 +197,79 @@ function Quiz() {
                 </div>
                 <div className="mp3-player col">{displayCorrectClip()}</div>
               </div>
-              <div className="container">
-                <div className="row">
-                  <div className="answer-section">
-                    {questions[currentQuestion].answerOptions.map(
+              <div className="row">
+                  <div className="answer-section col">
+                    {questions[currentQuestion].answerOptions.slice(0,1).map(
                       (answerOptions) => (
-                        <button
+                        <button 
                           className="answer-btn"
                           onClick={() => {
                             handleAnswerOptionClick(answerOptions.isCorrect);
                           }}
                         >
                           {answerOptions.answerText}
+
+                          <img className="gun-pic"
+                          src={KiloPic} 
+                          alt="Kilo"/>
                         </button>
                       )
                     )}
                   </div>
-                </div>
+                  <div className="answer-section col">
+                    {questions[currentQuestion].answerOptions.slice(1,2).map(
+                      (answerOptions) => (
+                        <button 
+                          className="answer-btn"
+                          onClick={() => {
+                            handleAnswerOptionClick(answerOptions.isCorrect);
+                          }}
+                        >
+                          {answerOptions.answerText}
+
+                          <img className="gun-pic"
+                          src={FalPic} 
+                          alt="FAL"/>
+                        </button>
+                      )
+                    )}
+                  </div>
+                  <div className="answer-section col">
+                    {questions[currentQuestion].answerOptions.slice(2,3).map(
+                      (answerOptions) => (
+                        <button 
+                          className="answer-btn"
+                          onClick={() => {
+                            handleAnswerOptionClick(answerOptions.isCorrect);
+                          }}
+                        >
+                          {answerOptions.answerText}
+
+                          <img className="gun-pic"
+                          src={M4Pic} 
+                          alt="M4"/>
+                        </button>
+                      )
+                    )}
+                  </div>
+                  <div className="answer-section col">
+                    {questions[currentQuestion].answerOptions.slice(3,4).map(
+                      (answerOptions) => (
+                        <button 
+                          className="answer-btn"
+                          onClick={() => {
+                            handleAnswerOptionClick(answerOptions.isCorrect);
+                          }}
+                        >
+                          {answerOptions.answerText}
+
+                          <img className="gun-pic"
+                          src={Fr556Pic} 
+                          alt="Kilo"/>
+                        </button>
+                      )
+                    )}
+                  </div>
               </div>
             </div>
           </div>
