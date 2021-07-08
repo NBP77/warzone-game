@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import DisplayLastScore from '../../components/DisplayLastScore';
+import DisplayLastScore from "../../components/DisplayLastScore";
 import ReactAudioPlayer from "react-audio-player";
 import "./style.css";
-import questions from '../../questions';
+import questions from "../../questions";
 
 function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -13,11 +13,11 @@ function Quiz() {
 
   const [currentClip, setCurrentClip] = useState(0);
 
-  // const [lastScore, setLastScore] = useState(0); 
+  // const [correctAnswerColor, setCorrectAnswerColor] = useState();
+
+  // const [wrongAnswerColor, setWrongAnswerColor] = useState();
 
   // Fix start page to look better
-
-  // Make the MP3 player look cooler and bigger and not show legnth of clip
 
   // Re-Work the button layout to look good
 
@@ -27,36 +27,31 @@ function Quiz() {
 
   // Add sound clicks to buttons if user chooses right or wrong
 
-  // former score and high score
-  
-  const scoreResponseOne = "\"Umm have you even played the game??\"";
-  const scoreResponseTwo = "\"Wow major BOT Alert!!!\"";
-  const scoreResponseThree = "\"Chill you're dripping in sweat...\"";
-  const scoreResponseFour = "\"This kid is CRACKED!!!\"";
-  const scoreResponseFive = "\"Dude turn your Aimbot offff!!!!\"";
-  
+  const scoreResponseOne = '"Umm have you even played the game??"';
+  const scoreResponseTwo = '"Wow major BOT Alert!!!"';
+  const scoreResponseThree = '"Chill you\'re dripping in sweat..."';
+  const scoreResponseFour = '"This kid is CRACKED!!!"';
+  const scoreResponseFive = '"Dude turn your Aimbot offff!!!!"';
 
   const replayGame = () => {
     window.location.reload();
-    setCurrentQuestion(0)
-    setScore(0)
-    setShowScore(false)
-    setCurrentClip(0)
-    localStorage.setItem('LastScore', score);
-  }
+    setCurrentQuestion(0);
+    setScore(0);
+    setShowScore(false);
+    setCurrentClip(0);
+    localStorage.setItem("LastScore", score);
+  };
 
   const displayResponseOne = () => {
     if (score === 0) {
       return (
-        <div className="card score-card">
+        <div className="score-card">
           <div className="card-body">
             <div className="card-text">
               You scored {score} out of {questions.length}
             </div>
             <div className="score-responses">{scoreResponseOne}</div>
-            <div 
-            onClick={replayGame} 
-             type="button" className="play-button">
+            <div onClick={replayGame} type="button" className="replay-button">
               Try Again?
             </div>
           </div>
@@ -74,15 +69,13 @@ function Quiz() {
       score === 5
     ) {
       return (
-        <div className="card score-card">
+        <div className="score-card">
           <div className="card-body">
             <div className="card-text">
               You scored {score} out of {questions.length}
             </div>
             <div className="score-responses">{scoreResponseTwo}</div>
-            <div 
-            onClick={replayGame} 
-            type="button" className="play-button">
+            <div onClick={replayGame} type="button" className="replay-button">
               Try Again?
             </div>
           </div>
@@ -94,15 +87,13 @@ function Quiz() {
   const displayResponseThree = () => {
     if (score === 6 || score === 7 || score === 8 || score === 9) {
       return (
-        <div className="card score-card">
+        <div className="score-card">
           <div className="card-body">
             <div className="card-text">
               You scored {score} out of {questions.length}
             </div>
             <div className="score-responses">{scoreResponseThree}</div>
-            <div 
-            onClick={replayGame}
-             type="button" className="play-button">
+            <div onClick={replayGame} type="button" className="replay-button">
               Try Again?
             </div>
           </div>
@@ -114,15 +105,13 @@ function Quiz() {
   const displayResponseFour = () => {
     if (score === 10 || score === 11 || score === 12) {
       return (
-        <div className="card score-card">
+        <div className="score-card">
           <div className="card-body">
             <div className="card-text">
               You scored {score} out of {questions.length}
             </div>
             <div className="score-responses">{scoreResponseFour}</div>
-            <div 
-            onClick={replayGame} 
-            type="button" className="play-button">
+            <div onClick={replayGame} type="button" className="replay-button">
               Try Again?
             </div>
           </div>
@@ -134,15 +123,13 @@ function Quiz() {
   const displayResponseFive = () => {
     if (score === 13) {
       return (
-        <div className="card score-card">
+        <div className="score-card">
           <div className="card-body">
             <div className="card-text">
               You scored {score} out of {questions.length}
             </div>
             <div className="score-responses">{scoreResponseFive}</div>
-            <div 
-            onClick={replayGame} 
-            type="button" className="play-button">
+            <div onClick={replayGame} type="button" className="replay-button">
               Try Again?
             </div>
           </div>
@@ -182,8 +169,7 @@ function Quiz() {
     <div className="quiz">
       <div className="container-fluid">
         {showScore ? (
-          <div 
-          className="score-section container-fluid vertical-center">
+          <div className="score-section container-fluid vertical-center">
             {displayResponseOne()}
             {displayResponseTwo()}
             {displayResponseThree()}
@@ -193,40 +179,42 @@ function Quiz() {
         ) : (
           <div>
             <DisplayLastScore />
-          <div className="question-section game-container">
-            <div>
+            <div className="game-container">
               <div>
-                <div className="gun-number">
-                  Assault rifle number {currentQuestion + 1}
+                <div>
+                  <div className="game-question">
+                    Can you guess that Modern Warfare AR by sound?
+                  </div>
+                  <div className="gun-number">
+                    AR number {currentQuestion + 1}
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="row">
-              <div className="question-text col">
-                {questions[currentQuestion].questionText}
-              </div>
-              <div className="mp3-player col">{displayCorrectClip()}</div>
-            </div>
-            <div className="container">
               <div className="row">
-                <div className="answer-section">
-                  {questions[currentQuestion].answerOptions.map(
-                    (answerOptions) => (
-                      <button
-                        id="button-color-change"
-                        className="answer-btn"
-                        onClick={() => {
-                          handleAnswerOptionClick(answerOptions.isCorrect);
-                        }}
-                      >
-                        {answerOptions.answerText}
-                      </button>
-                    )
-                  )}
+                <div className="question-text col">
+                  {questions[currentQuestion].questionText}
+                </div>
+                <div className="mp3-player col">{displayCorrectClip()}</div>
+              </div>
+              <div className="container">
+                <div className="row">
+                  <div className="answer-section">
+                    {questions[currentQuestion].answerOptions.map(
+                      (answerOptions) => (
+                        <button
+                          className="answer-btn"
+                          onClick={() => {
+                            handleAnswerOptionClick(answerOptions.isCorrect);
+                          }}
+                        >
+                          {answerOptions.answerText}
+                        </button>
+                      )
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
           </div>
         )}
       </div>

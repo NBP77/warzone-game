@@ -1,44 +1,64 @@
-.vertical-center {
+.center {
   height: 100vh;
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
+.gameTitle-box {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 1rem,
+    blue 1rem,
+    blue 3rem
+  );
+  background-size: 200% 200%;
+  animation: barberpole 40s linear infinite;
+  border: solid var(--white) 10px;
+  border-radius: 5px;
+}
 
-.title {
+@keyframes barberpole {
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+.gameTitle {
+  font-family: "Staatliches", cursive;
+  font-size: 100px;
+  letter-spacing: 5px;
+  color: var(--white);
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Staatliches", cursive;
-  letter-spacing: 2px;
-  color: var(--white);
-  font-size: 70px;
-  padding: 25px;
-  margin: 30px;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 50px;
 }
 
-.btn-container {
+.button-box {
   display: flex;
   justify-content: center;
-  align-items: center;
-  font-family: "Staatliches", cursive;
-  padding: 25px;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 50px;
 }
 
-.start-button {
-  color: var(--white);
-  padding: 50px 100px 50px;
-  border-radius: 10px;
-  margin: 20px;
+.playButton {
+  font-family: "Staatliches", cursive;
   font-size: 40px;
-  letter-spacing: 2px;
-  transition: all 1.5s;
-  border: 1px solid var(--white);
+  letter-spacing: 3px;
+  color: var(--white);
+  transition: all 1s;
+  border: 7px solid var(--white);
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 35px 100px 35px;
 }
 
-.start-button:hover {
+.playButton:hover {
   background: blue;
   transition: all 0.5s;
 }
-
-
