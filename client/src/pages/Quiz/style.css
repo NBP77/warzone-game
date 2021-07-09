@@ -1,3 +1,6 @@
+.game-container {
+}
+
 .game-question {
   display: flex;
   justify-content: center;
@@ -6,14 +9,9 @@
   letter-spacing: 3px;
   color: var(--white);
   font-size: 80px;
-  margin: 30px;
-  margin-bottom: 70px;
-}
-
-.game-container{
-  border: solid blue 10px;
-  border-radius: 5px;
-  padding: 10px;
+  margin-bottom: 40px;
+  margin-top: 30px;
+ 
 }
 
 .gun-number {
@@ -23,7 +21,7 @@
   font-family: 'Lato', sans-serif;
   letter-spacing: 3px;
   color: var(--white);
-  font-size: 50px;
+  font-size: 40px;
 }
 
 .question-text {
@@ -33,7 +31,7 @@
   font-family: 'Lato', sans-serif;
   letter-spacing: 3px;
   color: var(--white);
-  font-size: 30px;
+  font-size: 40px;
   margin: 10px;
 }
 
@@ -56,8 +54,8 @@
     -45deg,
     transparent,
     transparent 1rem,
-    blue 1rem,
-    blue 3rem
+    var(--army-green) 1rem,
+    var(--army-green) 3rem
   );
   background-size: 200% 200%;
   animation: barberpole 40s linear infinite;
@@ -116,6 +114,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .answer-btn {
@@ -127,11 +127,8 @@
   font-size: 35px;
   font-family: "Staatliches", cursive;
   letter-spacing: 3px;
-  padding: 5px;
-  margin: 5px;
-  margin-top: 25px;
-  margin-bottom: 25px;
   transition: all 1s;
+  
   
 }
 

@@ -10,8 +10,8 @@
     -45deg,
     transparent,
     transparent 1rem,
-    blue 1rem,
-    blue 3rem
+    var(--army-green) 1rem,
+    var(--army-green) 3rem
   );
   background-size: 200% 200%;
   animation: barberpole 40s linear infinite;
