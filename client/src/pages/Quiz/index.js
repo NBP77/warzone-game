@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import DisplayLastScore from "../../components/DisplayLastScore";
 // import ButtonDisplayOne from "../../components/ButtonDisplayOne";
 import ReactAudioPlayer from "react-audio-player";
@@ -27,13 +27,7 @@ function Quiz() {
 
   const [currentClip, setCurrentClip] = useState(0);
 
-  // const [correctAnswerColor, setCorrectAnswerColor] = useState();
-
-  // const [wrongAnswerColor, setWrongAnswerColor] = useState();
-
-  // Re-Work the button layout to look good try to break them out in diff components
-
-  // Color change on button if correct/wrong choice is picked
+  // Color Theme!!!! 
 
   // Add sound clicks to buttons if user chooses right or wrong
 
@@ -148,6 +142,20 @@ function Quiz() {
     }
   };
 
+  const buttonClickRef = useRef();
+
+  const correctButtonStyle = `
+  background-color: green;
+  `;
+
+  const wrongButtonStyle = `
+    background-color: red;
+  `;
+
+  const oldButtonStyle = `
+  background-color: none;
+  `;
+
   const handleAnswerOptionClick = (isCorrect) => {
     if (isCorrect) {
       setScore(score + 1);
@@ -159,6 +167,17 @@ function Quiz() {
       setCurrentQuestion(nextQuestion);
     } else {
       setShowScore(true);
+    }
+    if (isCorrect) {
+      buttonClickRef.current.style = correctButtonStyle;
+      setTimeout(() => {
+        buttonClickRef.current.style = oldButtonStyle;
+      }, 300);
+    } else {
+      buttonClickRef.current.style = wrongButtonStyle;
+      setTimeout(() => {
+      buttonClickRef.current.style = oldButtonStyle;
+      }, 300);
     }
   };
 
@@ -176,7 +195,7 @@ function Quiz() {
   };
 
   return (
-    <div className="quiz">
+    <div className="quiz" ref={buttonClickRef}>
       <div className="container-fluid">
         {showScore ? (
           <div className="score-section container-fluid vertical-center">
@@ -195,7 +214,6 @@ function Quiz() {
                   <div className="game-question">
                     Can you guess that Modern Warfare AR by sound?
                   </div>
-                 
                 </div>
               </div>
               <div className="row">
@@ -203,8 +221,8 @@ function Quiz() {
                   {questions[currentQuestion].questionText}
                 </div>
                 <div className="gun-number">
-                    AR number {currentQuestion + 1}
-                  </div>
+                  AR number {currentQuestion + 1}
+                </div>
                 <div className="mp3-player col">{displayCorrectClip()}</div>
               </div>
               {/* Buttons 1-4 */}
@@ -217,6 +235,7 @@ function Quiz() {
                         className="answer-btn"
                         onClick={() => {
                           handleAnswerOptionClick(answerOptions.isCorrect);
+                          // setColor(answerOptions.isCorrect);
                         }}
                       >
                         {answerOptions.answerText}
@@ -233,6 +252,7 @@ function Quiz() {
                         className="answer-btn"
                         onClick={() => {
                           handleAnswerOptionClick(answerOptions.isCorrect);
+                          // setColor(answerOptions.isCorrect);
                         }}
                       >
                         {answerOptions.answerText}
@@ -249,6 +269,7 @@ function Quiz() {
                         className="answer-btn"
                         onClick={() => {
                           handleAnswerOptionClick(answerOptions.isCorrect);
+                          // setColor(answerOptions.isCorrect);
                         }}
                       >
                         {answerOptions.answerText}
@@ -265,6 +286,7 @@ function Quiz() {
                         className="answer-btn"
                         onClick={() => {
                           handleAnswerOptionClick(answerOptions.isCorrect);
+                          // setColor(answerOptions.isCorrect);
                         }}
                       >
                         {answerOptions.answerText}
@@ -284,6 +306,7 @@ function Quiz() {
                         className="answer-btn"
                         onClick={() => {
                           handleAnswerOptionClick(answerOptions.isCorrect);
+                          // setColor(answerOptions.isCorrect);
                         }}
                       >
                         {answerOptions.answerText}
@@ -300,6 +323,7 @@ function Quiz() {
                         className="answer-btn"
                         onClick={() => {
                           handleAnswerOptionClick(answerOptions.isCorrect);
+                          // setColor(answerOptions.isCorrect);
                         }}
                       >
                         {answerOptions.answerText}
@@ -316,6 +340,7 @@ function Quiz() {
                         className="answer-btn"
                         onClick={() => {
                           handleAnswerOptionClick(answerOptions.isCorrect);
+                          // setColor(answerOptions.isCorrect);
                         }}
                       >
                         {answerOptions.answerText}
@@ -332,6 +357,7 @@ function Quiz() {
                         className="answer-btn"
                         onClick={() => {
                           handleAnswerOptionClick(answerOptions.isCorrect);
+                          // setColor(answerOptions.isCorrect);
                         }}
                       >
                         {answerOptions.answerText}
@@ -351,6 +377,7 @@ function Quiz() {
                         className="answer-btn"
                         onClick={() => {
                           handleAnswerOptionClick(answerOptions.isCorrect);
+                          // setColor(answerOptions.isCorrect);
                         }}
                       >
                         {answerOptions.answerText}
@@ -367,6 +394,7 @@ function Quiz() {
                         className="answer-btn"
                         onClick={() => {
                           handleAnswerOptionClick(answerOptions.isCorrect);
+                          // setColor(answerOptions.isCorrect);
                         }}
                       >
                         {answerOptions.answerText}
@@ -383,6 +411,7 @@ function Quiz() {
                         className="answer-btn"
                         onClick={() => {
                           handleAnswerOptionClick(answerOptions.isCorrect);
+                          // setColor(answerOptions.isCorrect);
                         }}
                       >
                         {answerOptions.answerText}
@@ -399,6 +428,7 @@ function Quiz() {
                         className="answer-btn"
                         onClick={() => {
                           handleAnswerOptionClick(answerOptions.isCorrect);
+                          // setColor(answerOptions.isCorrect);
                         }}
                       >
                         {answerOptions.answerText}
@@ -418,6 +448,7 @@ function Quiz() {
                         className="answer-btn"
                         onClick={() => {
                           handleAnswerOptionClick(answerOptions.isCorrect);
+                          // setColor(answerOptions.isCorrect);
                         }}
                       >
                         {answerOptions.answerText}

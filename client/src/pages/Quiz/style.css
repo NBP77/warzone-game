@@ -119,7 +119,7 @@
 }
 
 .answer-btn {
-  background-color: transparent;
+  background-color: black;
   border: 7px solid blue;
   border-radius: 5px;
   color: var(--white);
