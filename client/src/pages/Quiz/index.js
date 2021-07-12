@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import DisplayLastScore from "../../components/DisplayLastScore";
-// import ButtonDisplayOne from "../../components/ButtonDisplayOne";
+import DisplayScoreResponses from "../../components/DisplayScoreResponses";
 import ReactAudioPlayer from "react-audio-player";
 import "./style.css";
 import questions from "../../questions";
@@ -27,15 +27,9 @@ function Quiz() {
 
   const [currentClip, setCurrentClip] = useState(0);
 
-  // Color Theme!!!! 
+  // Color Theme!!!!
 
   // Add sound clicks to buttons if user chooses right or wrong
-
-  const scoreResponseOne = '"Umm have you even played the game??"';
-  const scoreResponseTwo = '"Wow major BOT Alert!!!"';
-  const scoreResponseThree = '"Chill you\'re dripping in sweat..."';
-  const scoreResponseFour = '"This kid is CRACKED!!!"';
-  const scoreResponseFive = '"Dude turn your Aimbot offff!!!!"';
 
   const replayGame = () => {
     window.location.reload();
@@ -44,102 +38,6 @@ function Quiz() {
     setShowScore(false);
     setCurrentClip(0);
     localStorage.setItem("LastScore", score);
-  };
-
-  const displayResponseOne = () => {
-    if (score === 0) {
-      return (
-        <div className="score-card">
-          <div className="card-body">
-            <div className="card-text">
-              You scored {score} out of {questions.length}
-            </div>
-            <div className="score-responses">{scoreResponseOne}</div>
-            <div onClick={replayGame} type="button" className="replay-button">
-              Try Again?
-            </div>
-          </div>
-        </div>
-      );
-    }
-  };
-
-  const displayResponseTwo = () => {
-    if (
-      score === 1 ||
-      score === 2 ||
-      score === 3 ||
-      score === 4 ||
-      score === 5
-    ) {
-      return (
-        <div className="score-card">
-          <div className="card-body">
-            <div className="card-text">
-              You scored {score} out of {questions.length}
-            </div>
-            <div className="score-responses">{scoreResponseTwo}</div>
-            <div onClick={replayGame} type="button" className="replay-button">
-              Try Again?
-            </div>
-          </div>
-        </div>
-      );
-    }
-  };
-
-  const displayResponseThree = () => {
-    if (score === 6 || score === 7 || score === 8 || score === 9) {
-      return (
-        <div className="score-card">
-          <div className="card-body">
-            <div className="card-text">
-              You scored {score} out of {questions.length}
-            </div>
-            <div className="score-responses">{scoreResponseThree}</div>
-            <div onClick={replayGame} type="button" className="replay-button">
-              Try Again?
-            </div>
-          </div>
-        </div>
-      );
-    }
-  };
-
-  const displayResponseFour = () => {
-    if (score === 10 || score === 11 || score === 12) {
-      return (
-        <div className="score-card">
-          <div className="card-body">
-            <div className="card-text">
-              You scored {score} out of {questions.length}
-            </div>
-            <div className="score-responses">{scoreResponseFour}</div>
-            <div onClick={replayGame} type="button" className="replay-button">
-              Try Again?
-            </div>
-          </div>
-        </div>
-      );
-    }
-  };
-
-  const displayResponseFive = () => {
-    if (score === 13) {
-      return (
-        <div className="score-card">
-          <div className="card-body">
-            <div className="card-text">
-              You scored {score} out of {questions.length}
-            </div>
-            <div className="score-responses">{scoreResponseFive}</div>
-            <div onClick={replayGame} type="button" className="replay-button">
-              Try Again?
-            </div>
-          </div>
-        </div>
-      );
-    }
   };
 
   const buttonClickRef = useRef();
@@ -176,7 +74,7 @@ function Quiz() {
     } else {
       buttonClickRef.current.style = wrongButtonStyle;
       setTimeout(() => {
-      buttonClickRef.current.style = oldButtonStyle;
+        buttonClickRef.current.style = oldButtonStyle;
       }, 300);
     }
   };
@@ -199,11 +97,28 @@ function Quiz() {
       <div className="container-fluid">
         {showScore ? (
           <div className="score-section container-fluid vertical-center">
-            {displayResponseOne()}
-            {displayResponseTwo()}
-            {displayResponseThree()}
+            <DisplayScoreResponses
+              score={score}
+              questions={questions}
+              replayGame={replayGame}
+            />
+            {/* <DisplayResponseOne
+              score={score}
+              questions={questions}
+              scoreResponseOne={scoreResponseOne}
+              replayGame={replayGame}
+            />
+            <DisplayResponseTwo
+              score={score}
+              questions={questions}
+              scoreResponseTwo={scoreResponseTwo}
+              replayGame={replayGame}
+            />
+
+            {/* {displayResponseTwo()} */}
+            {/* {displayResponseThree()}
             {displayResponseFour()}
-            {displayResponseFive()}
+            {displayResponseFive()}  */}
           </div>
         ) : (
           <div>
