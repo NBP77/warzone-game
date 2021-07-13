@@ -66,7 +66,7 @@ function Quiz() {
     }
     return (
       <div>
-        <ReactAudioPlayer src={correctClip} controls />
+        <ReactAudioPlayer src={correctClip} controls  />
       </div>
     );
   };

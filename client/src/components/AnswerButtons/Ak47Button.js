@@ -18,7 +18,7 @@ function Ak47Button(props) {
 
   const setColor = (isCorrect) => {
     if (isCorrect) {
-      if (props.currentQuestion === 12) {
+      if (props.currentQuestion === 11 || props.currentQuestion === 12) {
         return;
       }
       buttonClickRef.current.style = correctButtonStyle;
@@ -26,7 +26,7 @@ function Ak47Button(props) {
         buttonClickRef.current.style = oldButtonStyle;
       }, 300);
     } else {
-      if (props.currentQuestion === 12) {
+      if (props.currentQuestion === 11 || props.currentQuestion === 12) {
         return;
       }
       buttonClickRef.current.style = wrongButtonStyle;
@@ -35,6 +35,7 @@ function Ak47Button(props) {
       }, 300);
     }
   };
+  
   return (
     <div className="answer-section col">
       {props.questions[props.currentQuestion].answerOptions

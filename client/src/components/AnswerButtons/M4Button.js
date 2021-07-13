@@ -18,7 +18,7 @@ function M4Button(props) {
 
   const setColor = (isCorrect) => {
     if (isCorrect) {
-      if (props.currentQuestion === 12) {
+      if (props.currentQuestion === 11 || props.currentQuestion === 12) {
         return;
       }
       buttonClickRef.current.style = correctButtonStyle;
@@ -26,7 +26,7 @@ function M4Button(props) {
         buttonClickRef.current.style = oldButtonStyle;
       }, 300);
     } else {
-      if (props.currentQuestion === 12) {
+      if (props.currentQuestion === 11 || props.currentQuestion === 12) {
         return;
       }
       buttonClickRef.current.style = wrongButtonStyle;
