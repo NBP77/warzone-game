@@ -1,22 +1,22 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import DisplayLastScore from "../../components/DisplayLastScore";
 import DisplayScoreResponses from "../../components/DisplayScoreResponses";
 import ReactAudioPlayer from "react-audio-player";
 import "./style.css";
 import questions from "../../questions";
-import KiloPic from "../../ARPics/KILO.png";
-import FalPic from "../../ARPics/FAL.png";
-import M4Pic from "../../ARPics/M4.png";
-import Fr556Pic from "../../ARPics/FR 5.56.png";
-import OdenPic from "../../ARPics/ODEN.png";
-import M13Pic from "../../ARPics/M13.png";
-import ScarPic from "../../ARPics/SCAR.png";
-import AK47Pic from "../../ARPics/AK47.png";
-import RamPic from "../../ARPics/RAM.png";
-import GrauPic from "../../ARPics/GRAU.png";
-import AmaxPic from "../../ARPics/AMAX.png";
-import ANPic from "../../ARPics/AN-94.png";
-import ASValPic from "../../ARPics/ASVAL.png";
+import KiloButton from "../../components/AnswerButtons/KiloButton";
+import FalButton from "../../components/AnswerButtons/FalButton";
+import M4Button from "../../components/AnswerButtons/M4Button";
+import Fr556Button from "../../components/AnswerButtons/Fr556Button";
+import OdenButton from "../../components/AnswerButtons/OdenButton";
+import M13Button from "../../components/AnswerButtons/M13Button";
+import ScarButton from "../../components/AnswerButtons/ScarButton";
+import Ak47Button from "../../components/AnswerButtons/Ak47Button";
+import RamButton from "../../components/AnswerButtons/RamButton";
+import GrauButton from "../../components/AnswerButtons/GrauButton";
+import AmaxButton from "../../components/AnswerButtons/AmaxButton";
+import An94Button from "../../components/AnswerButtons/An94Button";
+import AsvalButton from "../../components/AnswerButtons/AsvalButton";
 
 function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -31,6 +31,10 @@ function Quiz() {
 
   // Add sound clicks to buttons if user chooses right or wrong
 
+  // Must play clip before clicking button 
+
+  // fix the unique key issue
+
   const replayGame = () => {
     window.location.reload();
     setCurrentQuestion(0);
@@ -39,20 +43,6 @@ function Quiz() {
     setCurrentClip(0);
     localStorage.setItem("LastScore", score);
   };
-
-  const buttonClickRef = useRef();
-
-  const correctButtonStyle = `
-  background-color: green;
-  `;
-
-  const wrongButtonStyle = `
-    background-color: red;
-  `;
-
-  const oldButtonStyle = `
-  background-color: none;
-  `;
 
   const handleAnswerOptionClick = (isCorrect) => {
     if (isCorrect) {
@@ -65,17 +55,6 @@ function Quiz() {
       setCurrentQuestion(nextQuestion);
     } else {
       setShowScore(true);
-    }
-    if (isCorrect) {
-      buttonClickRef.current.style = correctButtonStyle;
-      setTimeout(() => {
-        buttonClickRef.current.style = oldButtonStyle;
-      }, 300);
-    } else {
-      buttonClickRef.current.style = wrongButtonStyle;
-      setTimeout(() => {
-        buttonClickRef.current.style = oldButtonStyle;
-      }, 300);
     }
   };
 
@@ -93,7 +72,7 @@ function Quiz() {
   };
 
   return (
-    <div className="quiz" ref={buttonClickRef}>
+    <div className="quiz">
       <div className="container-fluid">
         {showScore ? (
           <div className="score-section container-fluid vertical-center">
@@ -102,23 +81,6 @@ function Quiz() {
               questions={questions}
               replayGame={replayGame}
             />
-            {/* <DisplayResponseOne
-              score={score}
-              questions={questions}
-              scoreResponseOne={scoreResponseOne}
-              replayGame={replayGame}
-            />
-            <DisplayResponseTwo
-              score={score}
-              questions={questions}
-              scoreResponseTwo={scoreResponseTwo}
-              replayGame={replayGame}
-            />
-
-            {/* {displayResponseTwo()} */}
-            {/* {displayResponseThree()}
-            {displayResponseFour()}
-            {displayResponseFive()}  */}
           </div>
         ) : (
           <div>
@@ -140,238 +102,82 @@ function Quiz() {
                 </div>
                 <div className="mp3-player col">{displayCorrectClip()}</div>
               </div>
-              {/* Buttons 1-4 */}
+              {/* Guns 1-4 */}
               <div className="row">
-                <div className="answer-section col">
-                  {questions[currentQuestion].answerOptions
-                    .slice(0, 1)
-                    .map((answerOptions) => (
-                      <button
-                        className="answer-btn"
-                        onClick={() => {
-                          handleAnswerOptionClick(answerOptions.isCorrect);
-                          // setColor(answerOptions.isCorrect);
-                        }}
-                      >
-                        {answerOptions.answerText}
-
-                        <img className="gun-pic" src={KiloPic} alt="Kilo" />
-                      </button>
-                    ))}
-                </div>
-                <div className="answer-section col">
-                  {questions[currentQuestion].answerOptions
-                    .slice(1, 2)
-                    .map((answerOptions) => (
-                      <button
-                        className="answer-btn"
-                        onClick={() => {
-                          handleAnswerOptionClick(answerOptions.isCorrect);
-                          // setColor(answerOptions.isCorrect);
-                        }}
-                      >
-                        {answerOptions.answerText}
-
-                        <img className="gun-pic" src={FalPic} alt="FAL" />
-                      </button>
-                    ))}
-                </div>
-                <div className="answer-section col">
-                  {questions[currentQuestion].answerOptions
-                    .slice(2, 3)
-                    .map((answerOptions) => (
-                      <button
-                        className="answer-btn"
-                        onClick={() => {
-                          handleAnswerOptionClick(answerOptions.isCorrect);
-                          // setColor(answerOptions.isCorrect);
-                        }}
-                      >
-                        {answerOptions.answerText}
-
-                        <img className="gun-pic" src={M4Pic} alt="M4" />
-                      </button>
-                    ))}
-                </div>
-                <div className="answer-section col">
-                  {questions[currentQuestion].answerOptions
-                    .slice(3, 4)
-                    .map((answerOptions) => (
-                      <button
-                        className="answer-btn"
-                        onClick={() => {
-                          handleAnswerOptionClick(answerOptions.isCorrect);
-                          // setColor(answerOptions.isCorrect);
-                        }}
-                      >
-                        {answerOptions.answerText}
-
-                        <img className="gun-pic" src={Fr556Pic} alt="Fr556" />
-                      </button>
-                    ))}
-                </div>
+                <KiloButton
+                  questions={questions}
+                  currentQuestion={currentQuestion}
+                  handleAnswerOptionClick={handleAnswerOptionClick}
+                />
+                <FalButton
+                  questions={questions}
+                  currentQuestion={currentQuestion}
+                  handleAnswerOptionClick={handleAnswerOptionClick}
+                />
+                <M4Button
+                  questions={questions}
+                  currentQuestion={currentQuestion}
+                  handleAnswerOptionClick={handleAnswerOptionClick}
+                />
+                <Fr556Button
+                  questions={questions}
+                  currentQuestion={currentQuestion}
+                  handleAnswerOptionClick={handleAnswerOptionClick}
+                />
               </div>
-              {/* Buttons 5-8 */}
+              {/* Guns 5-8 */}
               <div className="row">
-                <div className="answer-section col">
-                  {questions[currentQuestion].answerOptions
-                    .slice(4, 5)
-                    .map((answerOptions) => (
-                      <button
-                        className="answer-btn"
-                        onClick={() => {
-                          handleAnswerOptionClick(answerOptions.isCorrect);
-                          // setColor(answerOptions.isCorrect);
-                        }}
-                      >
-                        {answerOptions.answerText}
-
-                        <img className="gun-pic" src={OdenPic} alt="Oden" />
-                      </button>
-                    ))}
-                </div>
-                <div className="answer-section col">
-                  {questions[currentQuestion].answerOptions
-                    .slice(5, 6)
-                    .map((answerOptions) => (
-                      <button
-                        className="answer-btn"
-                        onClick={() => {
-                          handleAnswerOptionClick(answerOptions.isCorrect);
-                          // setColor(answerOptions.isCorrect);
-                        }}
-                      >
-                        {answerOptions.answerText}
-
-                        <img className="gun-pic" src={M13Pic} alt="M13" />
-                      </button>
-                    ))}
-                </div>
-                <div className="answer-section col">
-                  {questions[currentQuestion].answerOptions
-                    .slice(6, 7)
-                    .map((answerOptions) => (
-                      <button
-                        className="answer-btn"
-                        onClick={() => {
-                          handleAnswerOptionClick(answerOptions.isCorrect);
-                          // setColor(answerOptions.isCorrect);
-                        }}
-                      >
-                        {answerOptions.answerText}
-
-                        <img className="gun-pic" src={ScarPic} alt="Scar" />
-                      </button>
-                    ))}
-                </div>
-                <div className="answer-section col">
-                  {questions[currentQuestion].answerOptions
-                    .slice(7, 8)
-                    .map((answerOptions) => (
-                      <button
-                        className="answer-btn"
-                        onClick={() => {
-                          handleAnswerOptionClick(answerOptions.isCorrect);
-                          // setColor(answerOptions.isCorrect);
-                        }}
-                      >
-                        {answerOptions.answerText}
-
-                        <img className="gun-pic" src={AK47Pic} alt="AK-47" />
-                      </button>
-                    ))}
-                </div>
+                <OdenButton
+                  questions={questions}
+                  currentQuestion={currentQuestion}
+                  handleAnswerOptionClick={handleAnswerOptionClick}
+                />
+                <M13Button
+                  questions={questions}
+                  currentQuestion={currentQuestion}
+                  handleAnswerOptionClick={handleAnswerOptionClick}
+                />
+                <ScarButton
+                  questions={questions}
+                  currentQuestion={currentQuestion}
+                  handleAnswerOptionClick={handleAnswerOptionClick}
+                />
+                <Ak47Button
+                  questions={questions}
+                  currentQuestion={currentQuestion}
+                  handleAnswerOptionClick={handleAnswerOptionClick}
+                />
               </div>
-              {/* Buttons 9-12 */}
+              {/* Guns 8-12 */}
               <div className="row">
-                <div className="answer-section col">
-                  {questions[currentQuestion].answerOptions
-                    .slice(8, 9)
-                    .map((answerOptions) => (
-                      <button
-                        className="answer-btn"
-                        onClick={() => {
-                          handleAnswerOptionClick(answerOptions.isCorrect);
-                          // setColor(answerOptions.isCorrect);
-                        }}
-                      >
-                        {answerOptions.answerText}
-
-                        <img className="gun-pic" src={RamPic} alt="Ram" />
-                      </button>
-                    ))}
-                </div>
-                <div className="answer-section col">
-                  {questions[currentQuestion].answerOptions
-                    .slice(9, 10)
-                    .map((answerOptions) => (
-                      <button
-                        className="answer-btn"
-                        onClick={() => {
-                          handleAnswerOptionClick(answerOptions.isCorrect);
-                          // setColor(answerOptions.isCorrect);
-                        }}
-                      >
-                        {answerOptions.answerText}
-
-                        <img className="gun-pic" src={GrauPic} alt="Grau" />
-                      </button>
-                    ))}
-                </div>
-                <div className="answer-section col">
-                  {questions[currentQuestion].answerOptions
-                    .slice(10, 11)
-                    .map((answerOptions) => (
-                      <button
-                        className="answer-btn"
-                        onClick={() => {
-                          handleAnswerOptionClick(answerOptions.isCorrect);
-                          // setColor(answerOptions.isCorrect);
-                        }}
-                      >
-                        {answerOptions.answerText}
-
-                        <img className="gun-pic" src={AmaxPic} alt="Amax" />
-                      </button>
-                    ))}
-                </div>
-                <div className="answer-section col">
-                  {questions[currentQuestion].answerOptions
-                    .slice(11, 12)
-                    .map((answerOptions) => (
-                      <button
-                        className="answer-btn"
-                        onClick={() => {
-                          handleAnswerOptionClick(answerOptions.isCorrect);
-                          // setColor(answerOptions.isCorrect);
-                        }}
-                      >
-                        {answerOptions.answerText}
-
-                        <img className="gun-pic" src={ANPic} alt="AN-94" />
-                      </button>
-                    ))}
-                </div>
+                <RamButton
+                  questions={questions}
+                  currentQuestion={currentQuestion}
+                  handleAnswerOptionClick={handleAnswerOptionClick}
+                />
+                <GrauButton
+                  questions={questions}
+                  currentQuestion={currentQuestion}
+                  handleAnswerOptionClick={handleAnswerOptionClick}
+                />
+                <AmaxButton
+                  questions={questions}
+                  currentQuestion={currentQuestion}
+                  handleAnswerOptionClick={handleAnswerOptionClick}
+                />
+                <An94Button
+                  questions={questions}
+                  currentQuestion={currentQuestion}
+                  handleAnswerOptionClick={handleAnswerOptionClick}
+                />
               </div>
-              {/* Button 13 */}
+              {/* Gun 13 */}
               <div className="row">
-                <div className="answer-section col">
-                  {questions[currentQuestion].answerOptions
-                    .slice(12, 13)
-                    .map((answerOptions) => (
-                      <button
-                        className="answer-btn"
-                        onClick={() => {
-                          handleAnswerOptionClick(answerOptions.isCorrect);
-                          // setColor(answerOptions.isCorrect);
-                        }}
-                      >
-                        {answerOptions.answerText}
-
-                        <img className="gun-pic" src={ASValPic} alt="AS-Val" />
-                      </button>
-                    ))}
-                </div>
+                <AsvalButton
+                  questions={questions}
+                  currentQuestion={currentQuestion}
+                  handleAnswerOptionClick={handleAnswerOptionClick}
+                />
               </div>
             </div>
           </div>
