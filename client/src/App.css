@@ -10,3 +10,9 @@ body {
   --army-green: #6f7744;
 
 }
+
+.background {
+
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}

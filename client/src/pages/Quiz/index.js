@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import DisplayLastScore from "../../components/DisplayLastScore";
 import DisplayScoreResponses from "../../components/DisplayScoreResponses";
 import ReactAudioPlayer from "react-audio-player";
+import { Howl, Howler } from "howler";
+import HeadShotSound from "../../WZSoundEffects/HeadShotSound.mp3";
+import TeamateDowned from "../../WZSoundEffects/TeamateDowned.mp3";
 import "./style.css";
 import questions from "../../questions";
 import KiloButton from "../../components/AnswerButtons/KiloButton";
@@ -29,9 +32,9 @@ function Quiz() {
 
   // Color Theme!!!!
 
-  // Add sound clicks to buttons if user chooses right or wrong
+  // get better background
 
-  // Must play clip before clicking button 
+  // Add sound clicks to buttons if user chooses right or wrong
 
   // fix the unique key issue
 
@@ -55,6 +58,26 @@ function Quiz() {
       setCurrentQuestion(nextQuestion);
     } else {
       setShowScore(true);
+    }
+  };
+
+  const buttonClickSound = (isCorrect) => {
+    if (isCorrect) {
+      const sound = new Howl({
+        src: [HeadShotSound],
+      });
+
+      sound.play();
+
+      Howler.volume(0.8);
+    } else {
+      const sound = new Howl({
+        src: [TeamateDowned],
+      });
+  
+      sound.play();
+
+      Howler.volume(0.8);
     }
   };
 
@@ -108,6 +131,7 @@ function Quiz() {
                   questions={questions}
                   currentQuestion={currentQuestion}
                   handleAnswerOptionClick={handleAnswerOptionClick}
+                  buttonClickSound={buttonClickSound}
                 />
                 <FalButton
                   questions={questions}

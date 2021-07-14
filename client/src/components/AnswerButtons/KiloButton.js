@@ -1,7 +1,9 @@
 import React, { useRef } from "react";
 import KiloPic from "../../ARPics/KILO.png";
 
+
 function KiloButton(props) {
+
   const correctButtonStyle = `
   background-color: green;
 `;
@@ -47,6 +49,7 @@ function KiloButton(props) {
             onClick={() => {
               props.handleAnswerOptionClick(answerOptions.isCorrect);
               setColor(answerOptions.isCorrect);
+              props.buttonClickSound(answerOptions.isCorrect);
             }}
           >
             {answerOptions.answerText}
