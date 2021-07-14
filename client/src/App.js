@@ -3,7 +3,7 @@ import "./App.css";
 import { HashRouter, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Quiz from "./pages/Quiz";
-import WarzoneBG from "./ARPics/WarzoneBG.jpg"; 
+import WarzoneBG from "./ARPics/WarzoneBG.jpg";
 
 function App() {
   return (

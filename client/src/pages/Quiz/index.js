@@ -32,10 +32,6 @@ function Quiz() {
 
   // Color Theme!!!!
 
-  // get better background
-
-  // Add sound clicks to buttons if user chooses right or wrong
-
   // fix the unique key issue
 
   const replayGame = () => {
@@ -137,16 +133,19 @@ function Quiz() {
                   questions={questions}
                   currentQuestion={currentQuestion}
                   handleAnswerOptionClick={handleAnswerOptionClick}
+                  buttonClickSound={buttonClickSound}
                 />
                 <M4Button
                   questions={questions}
                   currentQuestion={currentQuestion}
                   handleAnswerOptionClick={handleAnswerOptionClick}
+                  buttonClickSound={buttonClickSound}
                 />
                 <Fr556Button
                   questions={questions}
                   currentQuestion={currentQuestion}
                   handleAnswerOptionClick={handleAnswerOptionClick}
+                  buttonClickSound={buttonClickSound}
                 />
               </div>
               {/* Guns 5-8 */}
@@ -155,21 +154,25 @@ function Quiz() {
                   questions={questions}
                   currentQuestion={currentQuestion}
                   handleAnswerOptionClick={handleAnswerOptionClick}
+                  buttonClickSound={buttonClickSound}
                 />
                 <M13Button
                   questions={questions}
                   currentQuestion={currentQuestion}
                   handleAnswerOptionClick={handleAnswerOptionClick}
+                  buttonClickSound={buttonClickSound}
                 />
                 <ScarButton
                   questions={questions}
                   currentQuestion={currentQuestion}
                   handleAnswerOptionClick={handleAnswerOptionClick}
+                  buttonClickSound={buttonClickSound}
                 />
                 <Ak47Button
                   questions={questions}
                   currentQuestion={currentQuestion}
                   handleAnswerOptionClick={handleAnswerOptionClick}
+                  buttonClickSound={buttonClickSound}
                 />
               </div>
               {/* Guns 8-12 */}
@@ -178,21 +181,25 @@ function Quiz() {
                   questions={questions}
                   currentQuestion={currentQuestion}
                   handleAnswerOptionClick={handleAnswerOptionClick}
+                  buttonClickSound={buttonClickSound}
                 />
                 <GrauButton
                   questions={questions}
                   currentQuestion={currentQuestion}
                   handleAnswerOptionClick={handleAnswerOptionClick}
+                  buttonClickSound={buttonClickSound}
                 />
                 <AmaxButton
                   questions={questions}
                   currentQuestion={currentQuestion}
                   handleAnswerOptionClick={handleAnswerOptionClick}
+                  buttonClickSound={buttonClickSound}
                 />
                 <An94Button
                   questions={questions}
                   currentQuestion={currentQuestion}
                   handleAnswerOptionClick={handleAnswerOptionClick}
+                  buttonClickSound={buttonClickSound}
                 />
               </div>
               {/* Gun 13 */}
@@ -201,6 +208,7 @@ function Quiz() {
                   questions={questions}
                   currentQuestion={currentQuestion}
                   handleAnswerOptionClick={handleAnswerOptionClick}
+                  buttonClickSound={buttonClickSound}
                 />
               </div>
             </div>

@@ -47,6 +47,7 @@ function Fr556Button(props) {
             onClick={() => {
               props.handleAnswerOptionClick(answerOptions.isCorrect);
               setColor(answerOptions.isCorrect);
+              props.buttonClickSound(answerOptions.isCorrect);
             }}
           >
             {answerOptions.answerText}
