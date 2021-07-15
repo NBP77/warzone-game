@@ -6,24 +6,11 @@
 }
 
 .gameTitle-box {
-  background-image: repeating-linear-gradient(
-    -45deg,
-    black,
-    black 1rem,
-    var(--army-green) 1rem,
-    var(--army-green) 3rem
-  );
-  background-size: 200% 200%;
-  animation: barberpole 40s linear infinite;
-  border: solid var(--white) 10px;
+  border: solid var(--camo-green) 15px;
   border-radius: 5px;
+  /* background-color:rgba(77, 162, 219, 0.76); */
 }
 
-@keyframes barberpole {
-  100% {
-    background-position: 100% 100%;
-  }
-}
 
 .gameTitle {
   font-family: "Staatliches", cursive;
@@ -46,19 +33,20 @@
   margin: 50px;
 }
 
-.playButton {
+.playButton {  
+  background-color: black;
   font-family: "Staatliches", cursive;
   font-size: 40px;
   letter-spacing: 3px;
   color: var(--white);
   transition: all 1s;
-  border: 7px solid var(--white);
+  border: 10px solid var(--camo-green);
   border-radius: 5px;
   cursor: pointer;
   padding: 35px 100px 35px;
 }
 
 .playButton:hover {
-  background: blue;
+  background: var(--camo-green);
   transition: all 0.5s;
 }

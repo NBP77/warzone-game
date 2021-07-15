@@ -70,7 +70,7 @@ function Quiz() {
       const sound = new Howl({
         src: [TeamateDowned],
       });
-  
+
       sound.play();
 
       Howler.volume(0.8);
@@ -85,7 +85,7 @@ function Quiz() {
     }
     return (
       <div>
-        <ReactAudioPlayer src={correctClip} controls  />
+        <ReactAudioPlayer src={correctClip} controls />
       </div>
     );
   };
@@ -122,94 +122,96 @@ function Quiz() {
                 <div className="mp3-player col">{displayCorrectClip()}</div>
               </div>
               {/* Guns 1-4 */}
-              <div className="row">
-                <KiloButton
-                  questions={questions}
-                  currentQuestion={currentQuestion}
-                  handleAnswerOptionClick={handleAnswerOptionClick}
-                  buttonClickSound={buttonClickSound}
-                />
-                <FalButton
-                  questions={questions}
-                  currentQuestion={currentQuestion}
-                  handleAnswerOptionClick={handleAnswerOptionClick}
-                  buttonClickSound={buttonClickSound}
-                />
-                <M4Button
-                  questions={questions}
-                  currentQuestion={currentQuestion}
-                  handleAnswerOptionClick={handleAnswerOptionClick}
-                  buttonClickSound={buttonClickSound}
-                />
-                <Fr556Button
-                  questions={questions}
-                  currentQuestion={currentQuestion}
-                  handleAnswerOptionClick={handleAnswerOptionClick}
-                  buttonClickSound={buttonClickSound}
-                />
-              </div>
-              {/* Guns 5-8 */}
-              <div className="row">
-                <OdenButton
-                  questions={questions}
-                  currentQuestion={currentQuestion}
-                  handleAnswerOptionClick={handleAnswerOptionClick}
-                  buttonClickSound={buttonClickSound}
-                />
-                <M13Button
-                  questions={questions}
-                  currentQuestion={currentQuestion}
-                  handleAnswerOptionClick={handleAnswerOptionClick}
-                  buttonClickSound={buttonClickSound}
-                />
-                <ScarButton
-                  questions={questions}
-                  currentQuestion={currentQuestion}
-                  handleAnswerOptionClick={handleAnswerOptionClick}
-                  buttonClickSound={buttonClickSound}
-                />
-                <Ak47Button
-                  questions={questions}
-                  currentQuestion={currentQuestion}
-                  handleAnswerOptionClick={handleAnswerOptionClick}
-                  buttonClickSound={buttonClickSound}
-                />
-              </div>
-              {/* Guns 8-12 */}
-              <div className="row">
-                <RamButton
-                  questions={questions}
-                  currentQuestion={currentQuestion}
-                  handleAnswerOptionClick={handleAnswerOptionClick}
-                  buttonClickSound={buttonClickSound}
-                />
-                <GrauButton
-                  questions={questions}
-                  currentQuestion={currentQuestion}
-                  handleAnswerOptionClick={handleAnswerOptionClick}
-                  buttonClickSound={buttonClickSound}
-                />
-                <AmaxButton
-                  questions={questions}
-                  currentQuestion={currentQuestion}
-                  handleAnswerOptionClick={handleAnswerOptionClick}
-                  buttonClickSound={buttonClickSound}
-                />
-                <An94Button
-                  questions={questions}
-                  currentQuestion={currentQuestion}
-                  handleAnswerOptionClick={handleAnswerOptionClick}
-                  buttonClickSound={buttonClickSound}
-                />
-              </div>
-              {/* Gun 13 */}
-              <div className="row">
-                <AsvalButton
-                  questions={questions}
-                  currentQuestion={currentQuestion}
-                  handleAnswerOptionClick={handleAnswerOptionClick}
-                  buttonClickSound={buttonClickSound}
-                />
+              <div className="answer-container">
+                <div className="row">
+                  <KiloButton
+                    questions={questions}
+                    currentQuestion={currentQuestion}
+                    handleAnswerOptionClick={handleAnswerOptionClick}
+                    buttonClickSound={buttonClickSound}
+                  />
+                  <FalButton
+                    questions={questions}
+                    currentQuestion={currentQuestion}
+                    handleAnswerOptionClick={handleAnswerOptionClick}
+                    buttonClickSound={buttonClickSound}
+                  />
+                  <M4Button
+                    questions={questions}
+                    currentQuestion={currentQuestion}
+                    handleAnswerOptionClick={handleAnswerOptionClick}
+                    buttonClickSound={buttonClickSound}
+                  />
+                  <Fr556Button
+                    questions={questions}
+                    currentQuestion={currentQuestion}
+                    handleAnswerOptionClick={handleAnswerOptionClick}
+                    buttonClickSound={buttonClickSound}
+                  />
+                </div>
+                {/* Guns 5-8 */}
+                <div className="row">
+                  <OdenButton
+                    questions={questions}
+                    currentQuestion={currentQuestion}
+                    handleAnswerOptionClick={handleAnswerOptionClick}
+                    buttonClickSound={buttonClickSound}
+                  />
+                  <M13Button
+                    questions={questions}
+                    currentQuestion={currentQuestion}
+                    handleAnswerOptionClick={handleAnswerOptionClick}
+                    buttonClickSound={buttonClickSound}
+                  />
+                  <ScarButton
+                    questions={questions}
+                    currentQuestion={currentQuestion}
+                    handleAnswerOptionClick={handleAnswerOptionClick}
+                    buttonClickSound={buttonClickSound}
+                  />
+                  <Ak47Button
+                    questions={questions}
+                    currentQuestion={currentQuestion}
+                    handleAnswerOptionClick={handleAnswerOptionClick}
+                    buttonClickSound={buttonClickSound}
+                  />
+                </div>
+                {/* Guns 8-12 */}
+                <div className="row">
+                  <RamButton
+                    questions={questions}
+                    currentQuestion={currentQuestion}
+                    handleAnswerOptionClick={handleAnswerOptionClick}
+                    buttonClickSound={buttonClickSound}
+                  />
+                  <GrauButton
+                    questions={questions}
+                    currentQuestion={currentQuestion}
+                    handleAnswerOptionClick={handleAnswerOptionClick}
+                    buttonClickSound={buttonClickSound}
+                  />
+                  <AmaxButton
+                    questions={questions}
+                    currentQuestion={currentQuestion}
+                    handleAnswerOptionClick={handleAnswerOptionClick}
+                    buttonClickSound={buttonClickSound}
+                  />
+                  <An94Button
+                    questions={questions}
+                    currentQuestion={currentQuestion}
+                    handleAnswerOptionClick={handleAnswerOptionClick}
+                    buttonClickSound={buttonClickSound}
+                  />
+                </div>
+                {/* Gun 13 */}
+                <div className="row">
+                  <AsvalButton
+                    questions={questions}
+                    currentQuestion={currentQuestion}
+                    handleAnswerOptionClick={handleAnswerOptionClick}
+                    buttonClickSound={buttonClickSound}
+                  />
+                </div>
               </div>
             </div>
           </div>
