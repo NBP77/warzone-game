@@ -11,13 +11,11 @@ function HomePage() {
 
   return (
     <div className="center">
-      <div className="gameTitle-section">
-        <div className="gameTitle-box">
-          <div className="gameTitle">The Warzone Sound Game</div>
-          <div className="button-box">
-            <div onClick={handleClick} type="button" className="playButton">
-              PLAY
-            </div>
+      <div className="gameTitle-box">
+        <div className="gameTitle">The Warzone Sound Game</div>
+        <div className="button-box">
+          <div onClick={handleClick} type="button" className="playButton">
+            PLAY
           </div>
         </div>
       </div>

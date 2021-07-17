@@ -9,9 +9,7 @@ function App() {
   return (
     <div className="background" style={{ backgroundImage: `url(${WarzoneBG})` }} >
       <HashRouter>
-        <Route exact path="/">
-          <HomePage />
-        </Route>
+        <Route exact path="/" component={HomePage} />
         <Route exact path="/Quiz" component={Quiz} />
       </HashRouter>
     </div>

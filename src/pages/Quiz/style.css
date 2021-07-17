@@ -19,6 +19,7 @@
   letter-spacing: 3px;
   color: var(--white);
   font-size: 40px;
+  margin: 10px;
 }
 
 .question-text {
@@ -126,6 +127,55 @@
   padding: 5px;
   margin: 5px;
 }
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (-webkit-min-device-pixel-ratio: 2) {
+ 
+  .game-question {
+    font-size: 40px;
+  }
+
+  .question-text {
+    font-size: 25px;
+    letter-spacing: 0px;
+  }
+
+  .gun-number {
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    letter-spacing: 0px;
+  }
+
+  .mp3-player {
+    margin-top: 20px;
+  }
+
+  .card-text {
+    font-size: 20px;
+    letter-spacing: 1px;
+
+  }
+
+  .score-responses {
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+
+  .replay-button{
+    font-size: 20px;
+    padding: 20px 70px 20px;
+    letter-spacing: 1px;
+    
+  }
+
+  .score-card {
+    border: 7px solid var(--camo-green);
+    padding: 38px;
+  }
+
+}
+
+
 
 
 

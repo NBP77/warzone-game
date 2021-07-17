@@ -116,8 +116,8 @@ function Quiz() {
                 <div className="question-text col">
                   {questions[currentQuestion].questionText}
                 </div>
-                <div className="gun-number">
-                  AR number {currentQuestion + 1}
+                <div className="gun-number col">
+                  AR number {currentQuestion + 1}/13
                 </div>
                 <div className="mp3-player col">{displayCorrectClip()}</div>
               </div>

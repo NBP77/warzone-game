@@ -11,13 +11,9 @@ body {
   --sea-glass-green: #98b796;
   --navy: #000080;
   --green: #004d00;
-
-
-
 }
 
 .background {
-
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
