@@ -292,7 +292,7 @@ function shuffle(array) {
 }
 
 shuffle(questions);
-console.log(questions)
+
 
 
 export default questions; 

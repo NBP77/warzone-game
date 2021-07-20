@@ -50,6 +50,27 @@
   transition: all 0.5s;
 }
 
+
+@media only screen and (max-width: 1000px) {
+  .gameTitle-box {
+    border: 10px solid var(--camo-green);
+  }
+
+  .gameTitle {
+    font-size: 50px;
+    padding: 20px;
+    margin: 5px;
+    margin-top: 20px;
+    letter-spacing: 2px;
+  }
+
+  .playButton {
+    font-size: 30px;
+    padding: 20px 100px 20px;
+  }
+}
+
+
 @media only screen and (min-device-width: 360px) and (max-device-width: 640px) and (-webkit-min-device-pixel-ratio: 2) {
   .gameTitle-box {
     border: 10px solid var(--camo-green);
@@ -106,3 +127,7 @@
     padding: 20px 65px 20px;
   }
 }
+
+
+
+
